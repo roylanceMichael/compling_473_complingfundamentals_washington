@@ -1,0 +1,70 @@
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB enter) 
+      (NP 
+        (NP (DT the) (NN line) (NN number) )
+        (PP (IN of) 
+          (NP (DT the) (JJ alphabetical) (NN title) (NN search) (NN option) ))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ-2 (DT a) (NN BIB) (NN summary) (NN screen) )
+    (VP (VBZ appears) 
+      (, ,)
+      (S-ADV 
+        (NP-SBJ (-NONE- *-2) )
+        (VP (VBG listing) 
+          (NP 
+            (NP (DT the) (NNS titles) )
+            (SBAR 
+              (WHNP-1 (WDT that) )
+              (S 
+                (NP-SBJ (-NONE- *T*-1) )
+                (VP (VBP match) 
+                  (NP (PRP$ your) (NN entry) ))))))))
+    (: :) ))
+
+( (S 
+    (SBAR-TMP 
+      (WHADVP-1 (WRB when) )
+      (S 
+        (NP-SBJ (PRP you) )
+        (VP (VBP access) 
+          (NP 
+            (NP (DT the) (NN BIB) (NN record) )
+            (SBAR 
+              (WHNP-2 (-NONE- 0) )
+              (S 
+                (NP-SBJ (PRP you) )
+                (VP (VBP want) 
+                  (NP (-NONE- *T*-2) )))))
+          (ADVP-TMP (-NONE- *T*-1) ))))
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (VP 
+        (VP (VB print) 
+          (NP (DT the) (NN screen) ))
+        (, ,) 
+        (VP (VB write) 
+          (PRT (RP down) )
+          (NP 
+            (NP (DT any) (NN information) )
+            (SBAR 
+              (WHNP-3 (-NONE- 0) )
+              (S 
+                (NP-SBJ (PRP you) )
+                (VP (VBP need) 
+                  (NP (-NONE- *T*-3) ))))))
+        (, ,) (CC or) 
+        (VP (VB select) 
+          (NP (DT the) (NN item) )
+          (SBAR-ADV (IN if) 
+            (S 
+              (NP-SBJ (PRP you) )
+              (VP (VBP are) 
+                (VP (VBG placing) 
+                  (NP (DT a) (NN hold) ))))))))
+    (. .) ))
+    

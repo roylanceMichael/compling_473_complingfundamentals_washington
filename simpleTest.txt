@@ -1,0 +1,9 @@
+(S 
+        (NP-SBJ (PRP$ your) (NN library) )
+        (VP 
+          (VP (VBZ is) 
+            (PP-LOC-PRD (IN on) 
+              (NP (DT a) (NN network) )))
+          (CC and) 
+          (VP (VBZ has) 
+            (NP (DT the) (NNP Dynix) (NNPS Gateways) (NN product) ))))

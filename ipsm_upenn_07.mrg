@@ -1,0 +1,171 @@
+( (S 
+    (ADVP (RB likewise) )
+    (, ,) 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ-1 (NN something) )
+        (VP (VBZ has) 
+          (VP (VBN been) 
+            (VP (VBN left) 
+              (NP (-NONE- *-1) )
+              (PRT (RP out) )
+              (PP-LOC (IN in) 
+                (NP (DT the) (NN source) (NN sentence) )))))))
+    (, ,) 
+    (NP-SBJ-2 (PRP you) )
+    (VP (MD will) 
+      (VP (VB have) 
+        (S 
+          (NP-SBJ (-NONE- *-2) )
+          (VP (TO to) 
+            (VP (VB delete) 
+              (NP (DT the) (VBG corresponding) (NNS parts) )
+              (PP-LOC (IN in) 
+                (NP (DT the) (VBN suggested) (NN translation) ))
+              (ADVP (RB as) (RB well) ))))))
+    (. .) ))
+
+
+( (S 
+    (ADVP-TMP (RB then) )
+    (NP-SBJ (-NONE- *) )
+    (VP (VB go) 
+      (PRT (RP on) )
+      (S 
+        (NP-SBJ (-NONE- *) )
+        (VP (VBG translating) ))
+      (SBAR-TMP (IN until) 
+        (S 
+          (NP-SBJ-1 (PRP you) )
+          (VP (VBP want) 
+            (S 
+              (NP-SBJ (-NONE- *-1) )
+              (VP (TO to) 
+                (VP (VB insert) 
+                  (NP (DT the) (JJ next) (NN translation) ))))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB select) 
+      (NP 
+        (NP (DT the) (NN text) )
+        (SBAR 
+          (WHNP-2 (-NONE- 0) )
+          (S 
+            (NP-SBJ-3 (-NONE- *T*-2) )
+            (VP (TO to) 
+              (VP (VB be) 
+                (VP (VBN copied) 
+                  (NP (-NONE- *-3) ))))))
+        (NP (-NONE- *ICH*-4) ))
+      (PP-LOC (IN in) 
+        (NP (DT the) (NN Concordance) (NN window) ))
+      (, ,) 
+      (NP-4 
+        (ADVP (RB usually) )
+        (NP (DT the) (NN translation) )
+        (PP (IN of) 
+          (NP 
+            (NP (DT the) (NN sentence) (NN part) )
+            (SBAR 
+              (WHNP-1 (WDT that) )
+              (S 
+                (NP-SBJ (PRP you) )
+                (VP (VBP have) 
+                  (VP (VBN searched) 
+                    (PP (IN for) 
+                      (NP (-NONE- *T*-1) ))))))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (DT the) (JJ same) )
+    (VP (VBZ goes) 
+      (PP (IN for) 
+        (NP (NN formatting) )))
+    (: :) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VBG making) 
+      (NP (NNS Corrections) ))
+    (. .) ))
+
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ-2 (PRP you) )
+        (VP (MD would) 
+          (VP (VB like) 
+            (S 
+              (NP-SBJ (-NONE- *-2) )
+              (VP (TO to) 
+                (VP (VB make) 
+                  (NP 
+                    (NP (NNS corrections) )
+                    (PP (TO to) 
+                      (NP (NNS translations) )))
+                  (PP-TMP (IN after) 
+                    (NP (PRP$ their) (JJ initial) (NN creation) )))))))))
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD should) 
+      (ADVP-TMP (RB always) )
+      (VP (VB do) 
+        (NP (DT this) )
+        (PP (IN in) 
+          (NP (NN TM) (NN mode) ))
+        (SBAR-PRP (IN so) (IN that) 
+          (S 
+            (NP-SBJ-1 (DT the) (NNS corrections) )
+            (VP (MD will) 
+              (VP (VB be) 
+                (VP (VBN stored) 
+                  (NP (-NONE- *-1) )
+                  (PP-LOC 
+                    (PP (IN in) 
+                      (NP (NN Translation) (NN Memory) ))
+                    (CONJP (RB as) (RB well) (IN as) )
+                    (PP (IN in) 
+                      (NP (PRP$ your) (NN document) ))))))))))
+    (. .) ))
+
+( (S (CC but) 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB consider) 
+      (NP 
+        (NP (DT the) (VBG following) (NN example) )
+        (SBAR 
+          (WHADVP-2 (WRB where) )
+          (S 
+            (NP-SBJ-1 (NN text) )
+            (VP (VBZ is) 
+              (VP (VBN used) 
+                (NP (-NONE- *-1) )
+                (PP-LOC (IN within) 
+                  (NP (DT an) (NN index) (NN entry) (NN field) ))
+                (ADVP-LOC (-NONE- *T*-2) )))))))
+    (: :) ))
+
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ-1 (DT a) 
+          (ADJP (JJ perfect) (CC or) (JJ fuzzy) )
+          (NN match) )
+        (VP (VBZ is) 
+          (VP (VBN found) 
+            (NP (-NONE- *-1) )))))
+    (, ,) 
+    (NP-SBJ (DT the) (NNP Workbench) )
+    (VP (MD will) 
+      (ADVP (RB again) )
+      (ADVP-MNR (RB automatically) )
+      (VP (VB transfer) 
+        (NP (PRP$ its) (NN translation) )
+        (PP-DIR (IN into) 
+          (NP 
+            (NP (DT the) (NN target) (NN field) )
+            (PP (IN in) 
+              (NP (NNP WinWord) ))))))
+    (. .) ))

@@ -1,0 +1,158 @@
+
+
+( (S 
+    (ADVP (RB alternatively) )
+    (, ,) 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB choose) 
+      (NP (DT the) (NNS Options...) (NN menu) (NN item) )
+      (PP (IN from) 
+        (NP 
+          (NP (NNP Word) (POS 's) )
+          (NNS Tools) (NN menu) )))
+    (. .) ))
+
+( (S 
+    (ADVP (RB thus) )
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD will) 
+      (VP (VB make) 
+        (ADJP (JJ sure) 
+          (SBAR (IN that) 
+            (S 
+              (NP-SBJ (PRP you) )
+              (VP (VBP see) 
+                (NP 
+                  (NP (PDT all) (DT the) (NN information) )
+                  (SBAR 
+                    (WHNP-1 (WDT that) )
+                    (S 
+                      (NP-SBJ (DT the) (NNP Workbench) )
+                      (VP (VBZ manages) 
+                        (NP (-NONE- *T*-1) )
+                        (PP-TMP (IN during) 
+                          (NP (NN translation) ))))))))))))
+    (: :) ))
+
+( (S 
+    (ADVP-TMP (RB always) )
+    (NP-SBJ-1 (-NONE- *) )
+    (VP (VB put) 
+      (NP (CD one) (NN abbreviation) )
+      (PP-LOC (IN on) 
+        (NP (DT a) (NN line) ))
+      (, ,) 
+      (S-ADV 
+        (NP-SBJ-2 (-NONE- *-1) )
+        (VP (VBN followed) 
+          (NP (-NONE- *-2) )
+          (PP (IN by) 
+            (NP-LGS (DT a) (NN period) )))))
+    (. .) ))
+
+( (S 
+    (PP-TMP (IN during) 
+      (NP 
+        (NP (DT the) (NN translation) )
+        (PP (IN of) 
+          (NP (DT this) (NN example) ))))
+    (, ,) 
+    (NP-SBJ (DT the) (NNP Workbench) )
+    (VP (MD should) 
+      (VP (VB ignore) 
+        (NP (DT the) (JJ second) (NN sentence) )
+        (SBAR-TMP 
+          (WHADVP-1 (WRB when) )
+          (S 
+            (NP-SBJ (-NONE- *) )
+            (VP (VBG moving) 
+              (PP-DIR (IN from) 
+                (NP (DT the) (JJ first) (NN sentence) ))
+              (PP-DIR (TO to) 
+                (NP (DT the) (JJ third) (NN one) ))
+              (ADVP-TMP (-NONE- *T*-1) ))))))
+    (. .) ))
+
+( (S 
+    (PP (IN in) 
+      (NP (NNP Word) ))
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (ADVP-TMP (RB immediately) )
+      (VP (VB recognize) 
+        (NP (DT a) 
+          (ADJP (CD 100) (NN %) )
+          (NN match) )
+        (PP (IN from) 
+          (NP 
+            (NP (DT the) (NN color) )
+            (PP (IN of) 
+              (NP (DT the) (NN target) (NN field) ))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ 
+      (NP (DT the) (NN TWB1) (NN button) )
+      (, ,) 
+      (VP 
+        (ADVP (RB also) )
+        (VBN labeled) 
+        (S 
+          (NP-SBJ (-NONE- *) )
+          (S-TTL-PRD 
+            (NP-SBJ (-NONE- *) )
+            (VP (VB Translate) 
+              (PP (IN Until) 
+                (NP (JJ Next) (JJ Fuzzy) (NN Match) )))))))
+    (, ,) 
+    (VP (VBZ tells) 
+      (NP-1 (DT the) (NNP Workbench) )
+      (S 
+        (NP-SBJ (-NONE- *-1) )
+        (VP (TO to) 
+          (VP (VB do) 
+            (NP (RB precisely) (DT this) )))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (ADVP (RB also) )
+      (VP (VB use) 
+        (NP 
+          (NP 
+            (NP (DT the) (NN shortcut) )
+            (NP 
+              (-LRB- -LSB-)
+              (NN Alt) 
+              (-RRB- -RSB-)
+              (CC +) 
+              (-LRB- -LSB-)
+              (NN x) 
+              (-RRB- -RSB-)
+              ))
+          (PP-LOC (IN on) 
+            (NP (DT the) (JJ separate) (JJ numeric) (NN keypad) )))
+        (S-PRP 
+          (NP-SBJ (-NONE- *) )
+          (VP (TO to) 
+            (VP (VB start) 
+              (NP (DT this) (NN function) ))))))
+    (. .) ))
+
+( (S 
+    (S-ADV 
+      (NP-SBJ (DT that) )
+      (VP (VBZ is) ))
+    (, ,) 
+    (NP-SBJ (DT these) (NNS words) )
+    (VP (VBP make) 
+      (S 
+        (NP-SBJ (DT the) (NN source) (NN sentence) )
+        (ADJP-PRD 
+          (ADJP (JJR longer) (CC or) (JJR shorter) )
+          (PP (IN than) 
+            (NP (DT the) (NN TM) (NN sentence) )))))
+    (. .) ))

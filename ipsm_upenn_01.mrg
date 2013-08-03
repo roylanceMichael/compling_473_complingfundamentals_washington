@@ -1,0 +1,132 @@
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ (PRP$ your) (NN library) )
+        (VP 
+          (VP (VBZ is) 
+            (PP-LOC-PRD (IN on) 
+              (NP (DT a) (NN network) )))
+          (CC and) 
+          (VP (VBZ has) 
+            (NP (DT the) (NNP Dynix) (NNPS Gateways) (NN product) )))))
+    (, ,) 
+    (NP-SBJ 
+      (NP (NNS patrons) 
+        (CC and)
+        (NNS staff) )
+      (PP-LOC (IN at) 
+        (NP (PRP$ your) (NN library) )))
+    (VP (MD can) 
+      (VP (VB use) 
+        (NP (NNS gateways) )
+        (S-PRP 
+          (NP-SBJ (-NONE- *) )
+          (VP (TO to) 
+            (VP (VB access) 
+              (NP 
+                (NP (NN information) )
+                (PP-LOC (IN on) 
+                  (NP (JJ other) (NNS systems) )))
+              (ADVP (RB as) (RB well) ))))))
+    (. .) ))
+
+( (S 
+    (PP (IN for) 
+      (NP (NN example) ))
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (VP 
+        (VP (VB search) 
+          (PP (IN for) 
+            (NP (NNS items) )))
+        (CC and) 
+        (VP (VB place) 
+          (NP (NNS holds) )
+          (PP (IN on) 
+            (NP (NNS items) )))
+        (PP-LOC (IN at) 
+          (NP 
+            (NP (JJ other) (NNS libraries) )
+            (, ,) 
+            (NP (NN research) (NN computer) (NNS centers) )
+            (, ,) 
+            (CC and)
+            (NP (NNS universities) )))))
+    (. .) ) )
+
+( (S 
+    (ADVP (RB typically) )
+    (, ,) 
+    (NP-SBJ (EX there) )
+    (VP (VBP are) 
+      (NP-PRD 
+        (NP (JJ multiple) (NN search) (NNS menus) )
+        (SBAR (-NONE- *ICH*-2) ))
+      (PP-LOC (IN on) 
+        (NP (PRP$ your) (NN system) ))
+      (, ,) 
+      (SBAR-2 
+        (WHNP-1 
+          (NP (DT each) )
+          (WHPP (IN of) 
+            (WHNP (WDT which) )))
+        (S 
+          (NP-SBJ-3 (-NONE- *T*-1) )
+          (VP (VBZ is) 
+            (VP (VBN set) 
+              (NP (-NONE- *-3) )
+              (PRT (RP up) )
+              (ADVP-MNR (RB differently) ))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ 
+      (NP (DT the) (NN search) (NN menu) )
+      (PP-LOC (IN in) 
+        (NP (DT the) (NN Circulation) (NN module) )))
+    (VP (MD may) 
+      (VP (VB make) 
+        (S 
+          (NP-SBJ (JJ additional) (NN search) (NNS methods) )
+          (ADJP-PRD (JJ available) 
+            (PP (TO to) 
+              (NP (NN library) (NNS staff) ))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VBZ displays) 
+      (NP 
+        (NP (DT the) (NNS records) )
+        (SBAR 
+          (WHNP-2 (WDT that) )
+          (S 
+            (NP-SBJ (-NONE- *T*-2) )
+            (VP (VBP have) 
+              (NP (DT a) (JJ specific) (NN word) (CC or) (NNS words) )
+              (PP-LOC (IN in) 
+                (NP 
+                  (NP (DT the) (NN TITLE) 
+                    (, ,)
+                    (NNS CONTENTS) 
+                    (, ,)
+                    (NN SUBJECT) 
+                    (, ,)
+                    (CC or) (NNS SERIES) (NNS fields) )
+                  (PP (IN of) 
+                    (NP (DT the) (NN BIB) (NN record) ))))))))
+      (, ,) 
+      (PP (VBG depending) 
+        (PP (IN on) 
+          (SBAR-NOM 
+            (WHNP-3 (WDT which) (NNS fields) )
+            (S 
+              (NP-SBJ-4 (-NONE- *T*-3) )
+              (VP (VBP have) 
+                (VP (VBN been) 
+                  (VP (VBN included) 
+                    (NP (-NONE- *-4) )
+                    (PP-LOC (IN in) 
+                      (NP (DT each) (NN index) ))))))))))
+    (. .) ))

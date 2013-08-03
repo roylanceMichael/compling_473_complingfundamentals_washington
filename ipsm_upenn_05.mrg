@@ -1,0 +1,226 @@
+
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ-1 (PRP you) )
+        (VP (VBP want) 
+          (S 
+            (NP-SBJ (-NONE- *-1) )
+            (VP (TO to) 
+              (VP (VB move) 
+                (NP (DT the) (NN text) )))))))
+    (, ,) 
+    (NP-SBJ (-NONE- *) )
+    (VP 
+      (VP (VB position) 
+        (NP (DT the) (NN mouse) (NN pointer) )
+        (ADVP-LOC (RB anywhere) 
+          (PP (IN in) 
+            (NP (DT the) (VBN selected) (NN text) ))))
+      (CC and) 
+      (VP (VB drag) 
+        (NP (DT the) (NN mouse) )
+        (SBAR-TMP (IN until) 
+          (S 
+            (NP (DT the) (NN insertion) (NN point) )
+            (VP (VBZ is) 
+              (PP-LOC-PRD (IN in) 
+                (NP (DT the) (VBN desired) (NN location) )))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ 
+      (NP (DT the) (NNS contents) )
+      (PP (IN of) 
+        (NP (DT the) (NN Clipboard) )))
+    (VP (VBP appear) 
+      (PP-LOC (IN in) 
+        (NP (DT the) (VBN desired) (NN location) )))
+    (. .) ))
+
+( (S-PRP 
+    (NP-SBJ (-NONE- *) )
+    (VP (TO to) 
+      (VP (VB move) (CC or) (VB copy) 
+        (NP (NN text) )
+        (PP (IN between) 
+          (NP (NNS documents) ))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB choose) 
+      (NP 
+        (NP 
+          (VP (VB Edit/Cut) ))
+        (CC or) 
+        (NP 
+          (VP (VB Edit/Copy) )))
+      (S-PRP 
+        (NP-SBJ (-NONE- *) )
+        (VP (TO to) 
+          (VP (VB place) 
+            (NP (DT the) (VBN selected) (NN text) )
+            (PP-LOC (IN on) 
+              (NP (DT the) (NN Clipboard) ))))))
+    (. .) ))
+
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ 
+          (NP (DT the) (NN document) )
+          (SBAR 
+            (WHPP-1 (IN into) 
+              (WHNP (WDT which) ))
+            (S 
+              (NP-SBJ-2 (PRP you) )
+              (VP (VBP want) 
+                (S 
+                  (NP-SBJ (-NONE- *-2) )
+                  (VP (TO to) 
+                    (VP (VB paste) 
+                      (NP (DT the) (NN text) )
+                      (PP (-NONE- *T*-1) ))))))))
+        (VP (VBZ is) 
+          (ADVP-TMP (RB already) )
+          (ADJP-PRD (JJ open) ))))
+    (, ,) 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (VP (VB switch) 
+        (PP (TO to) 
+          (NP (DT that) (NN window) ))
+        (PP 
+          (PP (IN by) 
+            (S-NOM 
+              (NP-SBJ (-NONE- *) )
+              (VP (VBG clicking) 
+                (PP-LOC (IN in) 
+                  (NP (PRP it) )))))
+          (CC or) 
+          (PP (IN by) 
+            (S-NOM 
+              (NP-SBJ (-NONE- *) )
+              (VP 
+                (VP (VBG choosing) 
+                  (NP (DT the) (NN Window) (NN menu) ))
+                (CC and) 
+                (VP (VBG selecting) 
+                  (NP (DT the) (VBN desired) (NN document) ))))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB press) 
+      (NP 
+        (NP (NN SHIFT+INS) )
+        (CC or) 
+        (NP (NN CTRL+V) )))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB select) 
+      (NP 
+        (NP (DT the) (NN text) )
+        (SBAR 
+          (WHNP-1 (-NONE- 0) )
+          (S 
+            (NP-SBJ-2 (PRP you) )
+            (VP (VBP want) 
+              (S 
+                (NP-SBJ (-NONE- *-2) )
+                (VP (TO to) 
+                  (VP (VB protect) 
+                    (NP (-NONE- *T*-1) )))))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (ADVP-MNR (RB permanently) )
+    (VP (VBZ inserts) 
+      (NP 
+        (NP (DT the) (NN date) )
+        (SBAR 
+          (WHADVP-1 (-NONE- 0) )
+          (S 
+            (NP-SBJ-2 (DT the) (JJ current) (NN document) )
+            (VP (VBD was) 
+              (VP (VBN created) 
+                (NP (-NONE- *-2) )
+                (ADVP-TMP (-NONE- *T*-1) )))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (VP (VB select) 
+        (NP (RP Off) 
+          (, ,)
+          (CD 1) 
+          (, ,)
+          (CD 2) 
+          (, ,)
+          (CD 3) 
+          (, ,)
+          (CC or) (CD 4) (NNS levels) )))
+    (. .) ))
+
+( (S 
+    (SBAR-TMP 
+      (WHADVP-1 (WRB when) )
+      (S 
+        (NP-SBJ-2 (PRP you) )
+        (VP (VBP want) 
+          (S 
+            (NP-SBJ (-NONE- *-2) )
+            (VP (TO to) 
+              (VP (VB reverse) 
+                (NP (DT an) (NN action) ))))
+          (ADVP-TMP (-NONE- *T*-1) ))))
+    (, ,) 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB choose) 
+      (NP 
+        (VP (VB Edit/Undo) )))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VBG modifying) 
+      (NP 
+        (NP (DT the) (NN Appearance) )
+        (PP (IN of) 
+          (NP (NN Text) ))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (DT the) (VBG following) )
+    (VP (VBP are) 
+      (NP 
+        (NP (NNS suggestions) )
+        (PP (IN on) 
+          (SBAR-MNR 
+            (WHADVP-1 (WRB how) )
+            (S 
+              (NP-SBJ (-NONE- *) )
+              (VP (TO to) 
+                (VP (VB proceed) 
+                  (SBAR-TMP 
+                    (WHADVP-2 (WRB when) )
+                    (S 
+                      (VP (VBG using) 
+                        (NP 
+                          (NP (DT the) (NNP Translator) (POS 's) )
+                          (NNP Workbench) )
+                        (PP 
+                          (ADVP (RB together) )
+                          (IN with) 
+                          (NP 
+                            (NP (NNP Word) )
+                            (PP (IN for) 
+                              (NP (NNPS Windows) (CD 6.0) ))))
+                        (ADVP-TMP (-NONE- *T*-2) ))))
+                  (ADVP-MNR (-NONE- *T*-1) ))))))))
+    (. .) ))

@@ -1,0 +1,164 @@
+
+( (S 
+    (NP-SBJ 
+      (NP (DT the) (NN cursor) (NN symbol) )
+      (NP 
+        (-LRB- -LRB-)
+        (SYM >) 
+        (-RRB- -RRB-)
+        ))
+    (VP (VBZ appears) 
+      (PP-LOC (IN on) 
+        (NP (DT the) (JJ alphabetical) (NN list) ))
+      (ADVP-LOC (RB next) 
+        (PP (TO to) 
+          (NP 
+            (NP (DT the) (NN heading) )
+            (SBAR 
+              (WHNP-1 (WDT that) )
+              (S 
+                (ADVP-MNR (RBS most) (RB closely) )
+                (NP-SBJ (-NONE- *T*-1) )
+                (VP (VBZ matches) 
+                  (NP (PRP$ your) (NN request) ))))))))
+    (. .) ))
+
+( (S 
+   (NP (JJ Byzantine) (NN empire)) (. .) ) )
+
+( (S 
+    (SBAR-TMP 
+      (WHADVP-1 (WRB when) )
+      (S 
+        (NP-SBJ (PRP you) )
+        (VP (VBP are) 
+          (VP (VBG editing) 
+            (NP (DT a) (NN document) )
+            (ADVP-TMP (-NONE- *T*-1) )))))
+    (, ,) 
+    (NP-SBJ-2 (PRP you) )
+    (VP (VBP want) 
+      (S 
+        (NP-SBJ-3 (-NONE- *-2) )
+        (VP (TO to) 
+          (VP (VB be) 
+            (ADJP-PRD (JJ able) 
+              (S 
+                (NP-SBJ (-NONE- *-3) )
+                (VP (TO to) 
+                  (VP (VB move) 
+                    (ADVP-MNR (RB quickly) )
+                    (PP-DIR (IN through) 
+                      (NP (DT the) (NNS pages) ))))))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (NN|VBG scrolling) )
+    (VP 
+      (VP (VBZ changes) 
+        (NP (DT the) (NN display) ))
+      (CC but) 
+      (VP (VBZ does) (RB not) 
+        (VP (VB move) 
+          (NP (DT the) (NN insertion) (NN point) ))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (TO to) 
+      (VP (VB use) 
+        (NP (NN keyboard) (NNS shortcuts) )
+        (S-PRP 
+          (NP-SBJ (-NONE- *) )
+          (VP (TO to) 
+            (VP (VB navigate) 
+              (NP (DT a) (NN document) ))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (-NONE- *) )
+    (VP (VB move) 
+      (NP (DT the) (NN mouse) (NN pointer) )
+      (PP-TMP (IN until) 
+        (S 
+          (NP-SBJ (DT the) (NN I-beam) )
+          (VP (VBZ is) 
+            (PP-LOC-PRD (IN at) 
+              (NP 
+                (NP (DT the) (NN beginning) )
+                (PP (IN of) 
+                  (NP 
+                    (NP (DT the) (NN text) )
+                    (SBAR 
+                      (WHNP-1 (-NONE- 0) )
+                      (S 
+                        (NP-SBJ-2 (PRP you) )
+                        (VP (VBP want) 
+                          (S 
+                            (NP-SBJ (-NONE- *-2) )
+                            (VP (TO to) 
+                              (VP (VB select) 
+                                (NP (-NONE- *T*-1) )))))))))))))))
+    (. .) ))
+
+
+( (S 
+    (NP-SBJ (NNP Ami) (NNP Pro) )
+    (VP (VBZ provides) 
+      (NP 
+        (NP (CD three) (NNS modes) )
+        (PP (IN for) 
+          (S-NOM 
+            (NP-SBJ (-NONE- *) )
+            (VP (VBG typing) 
+              (NP (NN text) ))))))
+    (. .) ))
+
+( (S 
+    (PP (IN in) 
+      (NP (NN Insert) (NN mode) ))
+    (, ,) 
+    (S 
+      (NP-SBJ (PRP you) )
+      (VP (VBP insert) 
+        (NP (NN text) )
+        (PP-LOC (IN at) 
+          (NP 
+            (NP (DT the) (NN position) )
+            (PP (IN of) 
+              (NP (DT the) (NN insertion) (NN point) ))))))
+    (CC and) 
+    (S 
+      (NP-SBJ (DT any) (VBG existing) (NN text) )
+      (ADVP-MNR (RB automatically) )
+      (VP (VBZ moves) ))
+    (. .) ))
+
+( (S 
+    (SBAR-ADV (IN if) 
+      (S 
+        (NP-SBJ (PRP you) )
+        (VP (VBP press) 
+          (NP (NN BACKSPACE) ))))
+    (, ,) 
+    (NP-SBJ (NNP Ami) (NNP Pro) )
+    (VP (VBZ deletes) 
+      (NP 
+        (NP (DT the) (VBN selected) (NN text) )
+        (CC and) 
+        (NP 
+          (NP (CD one) (NN character) )
+          (PP-LOC (TO to) 
+            (NP 
+              (NP (DT the) (JJ left) )
+              (PP (IN of) 
+                (NP (DT the) (VBN selected) (NN text) )))))))
+    (. .) ))
+
+( (S 
+    (NP-SBJ (PRP you) )
+    (VP (MD can) 
+      (VP (VB disable) 
+        (NP 
+          (VP (VB Drag) (CC &) (VB Drop) ))))
+    (. .) ))
