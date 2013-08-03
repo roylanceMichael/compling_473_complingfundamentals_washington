@@ -1,5 +1,13 @@
 # usage - ruby main.rb <location of file>
 # output - a table with the information for sentence, noun phrases, verb phrases etc
+
+def printVal(val)
+	tmpVal = val.strip
+	if(!tmpVal.empty?)
+		puts "-#{tmpVal}"
+	end
+end
+
 if ARGV != nil && ARGV.length > 0
 	puts ARGV[0]
 	# read file
@@ -13,18 +21,22 @@ if ARGV != nil && ARGV.length > 0
 	fileStr.split("").each do |c|
 		if c == "("
 			rightAfterOpenParen = true
-			puts currentValue
+			printVal(currentValue)
 			currentValue = ""
 		elsif c == ")"
-			puts currentValue
+			printVal(currentValue)
 			currentValue = ""
-		elsif rightAfterOpenParen
-			currentValue = "#{currentValue}#{c}"
-		elsif c == " "
-			puts currentValue
+		elsif c.strip.empty?
+			if(rightAfterOpenParen)
+				
+			end
+			rightAfterOpenParen = false
+			printVal(currentValue)
 			currentValue = ""
 		else
 			currentValue = "#{currentValue}#{c}"
 		end
 	end
 end
+
+
