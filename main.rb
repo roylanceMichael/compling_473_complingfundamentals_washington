@@ -1,4 +1,4 @@
-require 'pennTreeBank.rb'
+require './pennTreeBank.rb'
 # usage - ruby main.rb <location of file>
 # output - a table with the information for sentence, noun phrases, verb phrases etc
 if ARGV != nil && ARGV.length > 0
@@ -12,5 +12,13 @@ def printVal(val, currentSent)
 	if(!tmpVal.empty?)
 		#puts "-#{tmpVal}"
 		currentSent.push(val)
+	end
+end
+
+class Node
+	attr_accessor :pos, :label, :nodes, :parent
+
+	def initialize
+		@nodes = []
 	end
 end

@@ -1,5 +1,13 @@
 class Constituent
-	attr_accessor :pos, :value, :parent
+	attr_accessor :pos, :value, :parent, :children
+
+	def initialize
+		@children = []
+	end
+
+	def addChild(child)
+		@children.push(child)
+	end
 
 	def has_value?
 		return @value != nil
@@ -7,10 +15,20 @@ class Constituent
 
 
 	def has_children?
-		return @value != nil && @value == Array
+		return @value.length > 0
 	end
 
 	def to_s
-		"#{@pos} #{value}"
+		childrenStr = ""
+
+		if @children.length > 0
+			childrenStr = "["
+			@children.each do |child|
+				childrenStr = "#{childrenStr}#{child}, "
+			end
+			childrenStr = "#{childrenStr.strip}]"
+		end
+
+		"#{@pos} #{value}#{childrenStr}"
 	end
 end
