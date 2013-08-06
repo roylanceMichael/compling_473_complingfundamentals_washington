@@ -10,4 +10,7 @@ if ARGV != nil && ARGV.length > 0
 	fileStr = (File.open(ARGV[0])).read
 	ptb = Ptb.new
 	ptb.process fileStr
+	puts "Successfully ran!"
+else
+	puts "Did not successfully run!"
 end
