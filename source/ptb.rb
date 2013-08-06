@@ -1,4 +1,8 @@
-require './constituent.rb'
+if File.exists? './constituent.rb'
+	require './constituent.rb'
+else
+	require './source/constituent.rb'
+end
 
 class Ptb
 	def process(fileStr)

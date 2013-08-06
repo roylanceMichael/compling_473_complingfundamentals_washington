@@ -1,4 +1,8 @@
-require './ptb.rb'
+if File.exists? './ptb.rb'
+	require './ptb.rb'
+else
+	require './source/ptb.rb'
+end
 
 class PennBankParseTests
 	def run
