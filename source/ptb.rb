@@ -11,8 +11,6 @@ class Ptb
 		currentConstituent = nil
 		currentValue = ""
 
-		
-
 		fileStr.split("").each do |c|
 			if c == "("
 
