@@ -1,40 +1,28 @@
 if File.exists? './ptb.rb'
 	require './ptb.rb'
+	require './countPtb.rb'
 else
 	require './source/ptb.rb'
+	require './source/countPtb.rb'
 end
 
-def countNumX(res, x)
-	sCount = 0
-
-	if res == nil || res.length == 0
-		return sCount
-	end
-
-	# res is an array of constiuents
-	res.each do |constituent|
-		if(constituent.pos == x)
-			sCount = sCount + 1
-		end
-
-		#search children
-		sCount = sCount + countNumX(constituent.children, x)
-	end
-
-	return sCount
-end
+# constants used
+sentence = "S"
+vp = "VP"
+np = "NP"
 
 # usage - ruby main.rb <location of file>
 # output - a table with the information for sentence, noun phrases, verb phrases etc
 if ARGV != nil && ARGV.length > 0
 	path = ARGV[0]
 
-	Dir["#{path}/*"].each do |filePath|
-		fileStr = (File.open(filePath)).read
-		ptb = Ptb.new
-		res = ptb.process fileStr
+	ptb = Ptb.new
+	countPtb = CountPtb.new
 
-		puts "#{filePath}	#{countNumX(res, 'S')}	#{countNumX(res, 'NP')}"
+	Dir["#{path}/*"].each do |filePath|
+		fileStr = (File.open(filePath)).read		
+		res = ptb.process fileStr
+		puts "#{filePath}	#{countPtb.countNumX(res, sentence)}	#{countPtb.countNumX(res, np)}	#{countPtb.countNumX(res, vp)}	#{countPtb.countNumDitran(res)}	#{countPtb.countNumIntran(res)}"
 		# puts res
 		# puts "Successfully ran!"
 	end

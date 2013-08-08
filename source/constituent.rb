@@ -15,7 +15,7 @@ class Constituent
 
 
 	def has_children?
-		return @value.length > 0
+		return @children != nil && @children.length > 0
 	end
 
 	def to_s
