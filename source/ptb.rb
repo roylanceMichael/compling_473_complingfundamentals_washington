@@ -15,8 +15,10 @@ class Ptb
 			if c == "("
 
 				# first take care of the current value
-				if !currentValue.empty? && currentConstituent.pos.empty?
-					currentConstituent.pos = currentValue
+				if(currentValue != nil && currentConstituent != nil && !currentValue.empty? )
+					if(currentConstituent.pos == "" || currentConstituent.pos == nil)
+						currentConstituent.pos = currentValue
+					end
 				end
 				
 				# we want to push this
@@ -53,6 +55,7 @@ class Ptb
 				currentValue = "#{currentValue}#{c}"
 			end
 		end
+		#puts constituents
 		constituents
 	end
 

@@ -9,6 +9,7 @@ class PennBankParseTests
 		reports_single_constituent
 		reports_multiple_constituents
 		reports_child_constituents
+		reports_child_constituents_no_space
 	end
 
 	def reports_single_constituent
@@ -32,7 +33,7 @@ class PennBankParseTests
 		res = ptb.process(testStr)
 
 		# assert
-		raise "#{res[1].pos} #{res[1].value}" unless res[1].pos == "VP" && res[1].value == "yell"
+		raise "ERROR #{res[1].pos} #{res[1].value}" unless res[1].pos == "VP" && res[1].value == "yell"
 	end
 
 	def reports_child_constituents
@@ -43,7 +44,21 @@ class PennBankParseTests
 		# act
 		res = ptb.process(testStr)
 		child = res[0].children[0]
+
 		# assert
-		rails "#{child.pos} #{child.value}" unless child.pos == "NP" && child.value == "something"
+		raise "ERROR - #{child.pos} #{child.value}" unless child.pos == "NP" && child.value == "something"
+	end
+
+	def reports_child_constituents_no_space
+		# arrange
+		testStr = "(S(NP something))"
+		ptb = Ptb.new
+
+		# act
+		res = ptb.process(testStr)
+		child = res[0]
+		
+		# assert
+		raise "ERROR - #{child.pos} #{child.value}" unless child.pos == "S" && child.value == nil
 	end
 end
