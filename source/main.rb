@@ -22,10 +22,13 @@ if ARGV != nil && ARGV.length > 0
 	Dir["#{path}/*"].each do |filePath|
 		fileStr = (File.open(filePath)).read		
 		res = ptb.process fileStr
-		puts "#{filePath}	#{countPtb.countNumX(res, sentence)}	#{countPtb.countNumX(res, np)}	#{countPtb.countNumX(res, vp)}	#{countPtb.countNumDitran(res)}	#{countPtb.countNumIntran(res)}"
+		indivReport = countPtb.runTotal(res, filePath)
+		puts indivReport
 		# puts res
 		# puts "Successfully ran!"
 	end
+
+	puts countPtb.reportSumTotal(path)
 else
 	puts "Did not successfully run!"
 end

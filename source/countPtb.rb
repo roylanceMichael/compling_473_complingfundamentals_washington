@@ -1,9 +1,40 @@
 class CountPtb
 
-	# constants used
-	@sentence = "S"
-	@vp = "VP"
-	@np = "NP"
+
+
+
+	def initialize
+		@sentenceTotal = 0
+		@npTotal = 0
+		@vpTotal = 0
+		@vpDitran = 0
+		@vpIntran = 0
+
+		# constants used
+		@sentence = "S"
+		@vp = "VP"
+		@np = "NP"
+	end
+
+	def runTotal(res, filePath)
+		tmpSentenceTotal = countNumX(res, @sentence)
+		tmpNpTotal = countNumX(res, @np)
+		tmpVpTotal = countNumX(res, @vp)
+		tmpVpDitran = countNumDitran(res)
+		tmpVpIntran = countNumIntran(res)
+
+		@sentenceTotal = @sentenceTotal + tmpSentenceTotal
+		@npTotal = @npTotal + tmpNpTotal
+		@vpTotal = @vpTotal + tmpVpTotal
+		@vpDitran = @vpDitran + tmpVpDitran
+		@vpIntran = @vpIntran + tmpVpIntran
+
+		"#{filePath}	#{tmpSentenceTotal}	#{tmpNpTotal}	#{tmpVpTotal}	#{tmpVpDitran}	#{tmpVpIntran}"
+	end
+
+	def reportSumTotal(dirPath)
+		"#{dirPath}			#{@sentenceTotal}	#{@npTotal}	#{@vpTotal}	#{@vpDitran}	#{@vpIntran}"
+	end
 
 	# used for (S ...) (NP ...) and (VP ...)
 	def countNumX(res, x)
