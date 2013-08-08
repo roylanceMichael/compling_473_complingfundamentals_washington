@@ -47,7 +47,7 @@ class Ptb
 				currentValue = ""
 
 			elsif c.strip.empty?
-				if !currentValue.empty? 
+				if !currentValue.empty?  && currentConstituent != nil && (currentConstituent.pos == nil || currentConstituent.pos == "")
 					currentConstituent.pos = currentValue
 				end
 				currentValue = ""
