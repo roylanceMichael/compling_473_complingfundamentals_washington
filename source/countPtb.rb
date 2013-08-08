@@ -102,18 +102,18 @@ class CountPtb
 					iCount = iCount + 1
 				else
 					# whose immediate (top-level) constituents include no NPs
-					containsNps = false
-					constituent.children.each do |child|
-						if(child.pos == @np)
-							containsNps = true
-							break
-						end
-					end
+					# containsNps = false
+					# constituent.children.each do |child|
+					# 	if(child.pos == @np)
+					# 		containsNps = true
+					# 		break
+					# 	end
+					# end
 
-					# no top-level constituents found
-					if(!containsNps)
-						iCount = iCount + 1
-					end
+					# # no top-level constituents found
+					# if(!containsNps)
+					# 	iCount = iCount + 1
+					# end
 				end
 			end
 
