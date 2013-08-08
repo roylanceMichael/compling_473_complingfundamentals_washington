@@ -73,7 +73,7 @@ class CountPtb
 		res.each do |constituent|
 			# verify Ditransitive Verb Phrase
 			# looking for exactly two immediate constituents of type NP
-			if(constituent.has_children? && constituent.children.length == 2 && constituent.pos == @vp && constituent.value != nil)
+			if(constituent.has_children? && constituent.children.length == 2 && constituent.pos == @vp)
 				if(constituent.children[0].pos == @np && constituent.children[1].pos == @np)
 					dCount = dCount + 1
 				end
