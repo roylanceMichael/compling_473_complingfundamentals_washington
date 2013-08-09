@@ -1,10 +1,4 @@
-Executable = 
-Universe = vanilla
-getenv = true
+Executable = run.sh
 output = output.txt
-error = output.error
-Log = output.log
-arguments = "./source/main.rb ./content/simpleTest"
-transfer_executable = false
-request_memory = 2*1024
-Queue
+arguments = "./source/main.rb /corpora/LDC/LDC99T42/RAW/parsed/prd/wsj/14"
+queue
