@@ -1,11 +1,23 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main() {
-	ofstream myfile;
-	myfile.open ("test.txt");
-	myfile << "Writing this to a file";
-	myfile.close();
+	string line;
+
+	ifstream myfile ("./content/20000924_NYT");
+
+	if (myfile.is_open()) {
+		while (myfile.good()){
+			getline (myfile, line);
+			cout << line << endl;
+		}
+		myfile.close();
+	}
+	else {
+		cout << "Unable to open file";
+	}
+
 	return 0;
 }
