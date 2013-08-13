@@ -4,15 +4,15 @@ import java.util.*;
 
 public class Parse {
 	private String fileLocation;
-	private Hashtable<String, Integer> fileContents;
+	private HashMap<String, Integer> fileContents;
 
 	public Parse(String fileLocation) {
 		this.fileLocation = fileLocation;
-		this.fileContents = new Hashtable<String, Integer>();
+		this.fileContents = new HashMap<String, Integer>();
 	}
 
 	private Boolean IsValidAscii(Integer val) {
-		if (val >= 65 && val >= 90) {
+		if (val >= 65 && val <= 90) {
 			return true;
 		} else if (val >= 97 && val <= 122) {
 			return true;
@@ -37,8 +37,12 @@ public class Parse {
 
 		// first part of word
 		char firstChar = returnWord.charAt(0);
-		if(firstChar == '\'') {
+		while (firstChar == '\'' && !returnWord.isEmpty()) {
 			returnWord = returnWord.substring(1, returnWord.length());
+			
+			if (returnWord.length() > 0) {
+				firstChar = returnWord.charAt(0);
+			}
 		}
 
 		if (returnWord.isEmpty()) {
@@ -46,8 +50,13 @@ public class Parse {
 		}
 
 		char lastChar = returnWord.charAt(returnWord.length() - 1);
-		if(lastChar == '\'') {
+		
+		while (lastChar == '\'' && !returnWord.isEmpty()) {
 			returnWord = returnWord.substring(0, returnWord.length() - 1);
+
+			if (returnWord.length() > 0) {
+				lastChar = returnWord.charAt(returnWord.length() - 1);
+			}
 		}
 
 		if (returnWord.isEmpty()) {
@@ -108,15 +117,17 @@ public class Parse {
         }
 	}
 
-	public String ReportHash() {
+	public HashMap<String, Integer> ReportHash() {
+		return this.fileContents;
+		
+		/*
 		StringBuilder sb = new StringBuilder();
 
-		Enumeration<String> enumKey = this.fileContents.keys();
-		while(enumKey.hasMoreElements()) {
-			String key = enumKey.nextElement();
-			Integer val = this.fileContents.get(key);
-			sb.append(String.format("%s\t\t\t%s\n", key, val));
+		for (Map.Entry<String, Integer> entry : sortedMaps.entrySet()) {
+			sb.append(entry.getKey() + "\t\t\t" + entry.getValue() + "\n");
 		}
+
 		return sb.toString();
+		*/
 	}
 }
