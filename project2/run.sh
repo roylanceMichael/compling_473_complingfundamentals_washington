@@ -1,1 +1,1 @@
-ruby ./source/main.rb $1
+java -cp ./source App $1

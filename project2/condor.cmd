@@ -2,5 +2,5 @@ executable = run.sh
 output = output.txt
 log = tagCounter.log
 error = tagCounter.error
-arguments = "./source/main.rb /corpora/LDC/LDC99T42/RAW/parsed/prd/wsj/14"
+arguments = "/corpora/LDC/LDC02T31/nyt/2000"
 queue
