@@ -37,7 +37,7 @@ public class App {
 		HashMap<String, Integer> sortedHashMap = SortByValueDesc(masterHash);
 
 		for (Map.Entry<String, Integer> entry : sortedHashMap.entrySet()) {
-			System.out.println(entry.getKey() + "\t\t" + entry.getValue() + "\n");
+			System.out.println(entry.getKey() + "\t" + entry.getValue());
 		}
 	}
 
