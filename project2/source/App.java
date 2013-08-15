@@ -1,11 +1,13 @@
 import java.io.IOException;
+import java.io.FileReader;
 import java.io.File;
 import java.util.*;
 
 public class App {
 	public static void main(String args[]) throws IOException {
 		if(args == null || args.length == 0){
-			System.out.println("No input folder added");
+			Tests test = new Tests();
+			test.RunTests();
 			return;
 		}
 
@@ -16,10 +18,19 @@ public class App {
 
 		for (Integer i = 0; i < fileList.length; i++) {
 			if (fileList[i].isFile()) {
+				FileReader inputStream = null;
+				Parse p = new Parse();
+				
+				try {
+		        		inputStream = new FileReader(fileList[i].getPath());
+						p.BuildHash(inputStream);
+				} finally {
+		            if (inputStream != null) {
+		                inputStream.close();
+		            }
+		        }
+
 				// get the path
-				Parse p = new Parse(fileList[i].getPath());
-				p.BuildHash();
-		
 				HashMap<String, Integer> results = p.ReportHash();
 
 				for (Map.Entry<String, Integer> entry : results.entrySet()) {

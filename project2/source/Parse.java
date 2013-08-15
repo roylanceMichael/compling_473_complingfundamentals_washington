@@ -1,13 +1,11 @@
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Parse {
-	private String fileLocation;
 	private HashMap<String, Integer> fileContents;
 
-	public Parse(String fileLocation) {
-		this.fileLocation = fileLocation;
+	public Parse() {
 		this.fileContents = new HashMap<String, Integer>();
 	}
 
@@ -83,15 +81,11 @@ public class Parse {
 		}
 	}
 
-	public void BuildHash() throws IOException {
-		FileReader inputStream = null;
-
-        try {
-            inputStream = new FileReader(this.fileLocation);
-
+	public void BuildHash(InputStreamReader inputStream) throws IOException {
             int c;
             StringBuilder word = new StringBuilder();
             Boolean insideSmglTag = false;
+
             while ((c = inputStream.read()) != -1) {
             	
             	if (c == 60) { // handle <
@@ -110,24 +104,9 @@ public class Parse {
         			word.append(charToProcess);
             	}
             }
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
 	}
 
 	public HashMap<String, Integer> ReportHash() {
 		return this.fileContents;
-		
-		/*
-		StringBuilder sb = new StringBuilder();
-
-		for (Map.Entry<String, Integer> entry : sortedMaps.entrySet()) {
-			sb.append(entry.getKey() + "\t\t\t" + entry.getValue() + "\n");
-		}
-
-		return sb.toString();
-		*/
 	}
 }
