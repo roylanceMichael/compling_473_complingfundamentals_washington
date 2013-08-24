@@ -1,4 +1,4 @@
-namespace Ling473_Proj3
+﻿namespace Ling473_Proj3
 {
 	using System;
 	using System.IO;
