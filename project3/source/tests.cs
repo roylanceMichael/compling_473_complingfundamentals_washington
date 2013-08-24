@@ -1,17 +1,16 @@
-/*
 namespace Ling473_Proj3
 {
 	using System;
 	
 	public class Tests 
 	{
-		private const char V1Char = 'เ';
-		private const char C1Char = 'ษ';
-		private const char C2Char = 'ร';
-		private const char V2Char = 'ิ';
+		private const char V1Char = '\u0E40';
+		private const char C1Char = '\u0E01';
+		private const char C2Char = '\u0E23';
+		private const char V2Char = '\u0E34';
 		private const char TChar = '\u0E48';
-		private const char V3Char = 'า';
-		private const char C3Char = 'ม';
+		private const char V3Char = '\u0E32';
+		private const char C3Char = '\u0E21';
 
 		public void RunTests()
 		{
@@ -301,4 +300,3 @@ namespace Ling473_Proj3
 		}
 	}
 }
-*/

@@ -15,8 +15,8 @@ namespace Ling473_Proj3
 			// run tests if anything here
 			if(args != null && args.Length > 0 && args[0] == "test")
 			{
-				//var tests = new Tests();
-				//tests.RunTests();
+				var tests = new Tests();
+				tests.RunTests();
 			}
 			else
 			{

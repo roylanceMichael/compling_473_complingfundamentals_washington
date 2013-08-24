@@ -35,10 +35,10 @@ namespace Ling473_Proj3
 
 		private bool debug;
 
-		public Fsm(bool debug = true)
+		public Fsm(bool debug = false)
 		{
 			Console.OutputEncoding = System.Text.Encoding.UTF8;
-			
+
 			this.debug = debug;
 			this.Transitions = new Dictionary<int, Func<char, int>>
 			{
