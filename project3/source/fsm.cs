@@ -31,7 +31,7 @@ namespace Ling473_Proj3
 
 		private bool debug;
 
-		public Fsm(bool debug = false)
+		public Fsm(bool debug = true)
 		{
 			this.debug = debug;
 			this.Transitions = new Dictionary<int, Func<char, int>>
@@ -60,7 +60,7 @@ namespace Ling473_Proj3
 		public string Process(string input)
 		{
 			this.PrintIfDebug("Received Input: " + input);
-
+			this.PrintIfDebug(C3.First().ToString());
 			var acceptableState = 0;
 			var workSpace = new StringBuilder();
 
