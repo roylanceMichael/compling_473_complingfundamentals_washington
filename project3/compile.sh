@@ -1,2 +1,2 @@
 #!/bin/sh
-javac skeleton3.java
+dmcs ./source/app.cs ./source/tests.cs ./source/fsm.cs

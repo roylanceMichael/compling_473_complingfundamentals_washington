@@ -3,4 +3,4 @@
 # Call me thusly for dev:
 # ./run.sh </opt/dropbox/12-13/473/project3/fsm-input.utf8.txt >/home2/www-uakari/html/473/YOUR-PATAS-ID.html
 
-java -classpath . -Dfile.encoding=UTF-8 skeleton3 $*
+mono ./source/app.exe $*
