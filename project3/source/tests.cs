@@ -5,7 +5,7 @@ namespace Ling473_Proj3
 	public class Tests 
 	{
 		private const char V1Char = '\u0E40';
-		private const char C1Char = '\u0E01';
+		private const char C1Char = '\u0E2E';
 		private const char C2Char = '\u0E23';
 		private const char V2Char = '\u0E34';
 		private const char TChar = '\u0E48';
@@ -17,6 +17,17 @@ namespace Ling473_Proj3
 			this.InitialState();
 			this.InputLine2();
 			this.InputLine46();
+
+			// sad path
+			this.CheckIfState0ReturnsBadStateWhenBadChar();
+			this.CheckIfState1ReturnsBadStateWhenBadChar();
+			this.CheckIfState2ReturnsBadStateWhenBadChar();
+			this.CheckIfState3ReturnsBadStateWhenBadChar();
+			this.CheckIfState4ReturnsBadStateWhenBadChar();
+			this.CheckIfState5ReturnsBadStateWhenBadChar();
+			this.CheckIfState6ReturnsBadStateWhenBadChar();
+
+			// happy path
 			this.CheckIfState0ReturnsState1WhenV1Char();
 			this.CheckIfState0ReturnsState2WhenC1Char();
 			this.CheckIfState1ReturnsState2WhenC1Char();
@@ -41,7 +52,7 @@ namespace Ling473_Proj3
 		{
 			// arrange
 			const string input = "คู่แข่งขันต่างก็คุมเชิงกัน";
-			const string expectedOutput = "คู่ แข่ง ขัน ต่าง ก็ คุม เชิง กัน";
+			const string expectedOutput = "คู่ แข่ง ขัน ต่าง ก็ คุม เชิง กัน ";
 			var fsm = new Fsm(true);
 
 			// act
@@ -56,7 +67,7 @@ namespace Ling473_Proj3
 		{
 			// arrange
 			const string input = "เขาเงียบไปครู่หนึ่งแล้วพูดขึ้น";
-			const string expectedOutput = "เขา เงียบ ไป ครู่ หนึ่ง แล้ว พูด ขึ้น";
+			const string expectedOutput = "เขา เงียบ ไป ครู่ หนึ่ง แล้ว พูด ขึ้น ";
 			var fsm = new Fsm(true);
 
 			// act
@@ -72,7 +83,7 @@ namespace Ling473_Proj3
 			// ช่วยย้ายกล่องนี้ไปไว้ที่ห้องนั้นหน่อย
 			// arrange
 			const string input = "ช่วยย้ายกล่องนี้ไปไว้ที่ห้องนั้นหน่อย";
-			const string expectedOutput = "ช่วย ย้าย กล่อง นี้ ไป ไว้ ที่ ห้อง นั้น หน่อย";
+			const string expectedOutput = "ช่วย ย้าย กล่อง นี้ ไป ไว้ ที่ ห้อง นั้น หน่อย ";
 			var fsm = new Fsm(true);
 
 			// act
@@ -81,6 +92,90 @@ namespace Ling473_Proj3
 			// assert
 			Console.Out.WriteLine(expectedOutput);
 			Console.Out.WriteLine((res == expectedOutput) + " -> InputLine2");
+		}
+
+		public void CheckIfState0ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState0('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState0ReturnsState1WhenV1Char");
+		}
+
+		public void CheckIfState1ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState1('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState1ReturnsBadStateWhenBadChar");
+		}
+
+		public void CheckIfState2ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState2('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState2ReturnsBadStateWhenBadChar");
+		}
+
+		public void CheckIfState3ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState3('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState3ReturnsBadStateWhenBadChar");
+		}
+
+		public void CheckIfState4ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState4('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState4ReturnsBadStateWhenBadChar");
+		}
+
+		public void CheckIfState5ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState5('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState5ReturnsBadStateWhenBadChar");
+		}
+
+		public void CheckIfState6ReturnsBadStateWhenBadChar()
+		{
+			// arrange
+			var fsm = new Fsm(true);
+
+			// act
+			var res = fsm.CheckIfState6('w');
+
+			// assert
+			Console.Out.WriteLine((res == -1) + " -> result of CheckIfState6ReturnsBadStateWhenBadChar");
 		}
 
 		public void CheckIfState0ReturnsState1WhenV1Char()

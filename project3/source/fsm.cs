@@ -63,10 +63,32 @@ namespace Ling473_Proj3
 			}
 		}
 
+		private bool UpdateWorkSpaceIfSpaceBefore(int acceptableState, string inputChar, int result, StringBuilder workSpace)
+		{
+			if(acceptableState == 7 || acceptableState == 8) 
+			{
+				this.PrintIfDebug(string.Format("Current State: [{0}] ->\t(break before '{1}') ->\t[{2}]", acceptableState, inputChar, result));
+				workSpace.Insert(workSpace.Length - 1, ' ');
+				return true;
+			}
+			return false;
+		}
+
+
+		private bool UpdateWorkSpaceIfSpaceAfter(int acceptableState, string inputChar, int result, StringBuilder workSpace)
+		{
+			if(acceptableState == 9)
+			{
+				this.PrintIfDebug(string.Format("Current State: [{0}] ->\t(break before '{1}') ->\t[{2}]", acceptableState, inputChar, result));
+				workSpace.Append(' ');	
+				return true;			
+			}
+			return false;
+		}
+
 		public string Process(string input)
 		{
 			this.PrintIfDebug("Received Input: " + input);
-			this.PrintIfDebug(C3.First().ToString());
 			var acceptableState = 0;
 			var workSpace = new StringBuilder();
 
@@ -80,17 +102,13 @@ namespace Ling473_Proj3
 					this.PrintIfDebug(returnError);
 					return returnError;
 				}
-				else if(acceptableState == 7 || acceptableState == 8)
+				else if(this.UpdateWorkSpaceIfSpaceBefore(acceptableState, input[i].ToString(), result, workSpace))
 				{
 					i--;
-					this.PrintIfDebug(string.Format("Current State: [{0}] ->\t(break before '{1}') ->\t[{2}]", acceptableState, input[i].ToString(), result));
-					workSpace.Insert(workSpace.Length - 1, ' ');
 				}
-				else if(acceptableState == 9)
+				else if(this.UpdateWorkSpaceIfSpaceAfter(acceptableState, input[i].ToString(), result, workSpace))
 				{
 					i--;
-					this.PrintIfDebug(string.Format("Current State: [{0}] ->\t(break after '{1}') ->\t[{2}]", acceptableState, input[i].ToString(), result));
-					workSpace.Append(' ');
 				}
 				else
 				{
@@ -100,6 +118,9 @@ namespace Ling473_Proj3
 
 				acceptableState = result;
 			}
+
+			this.UpdateWorkSpaceIfSpaceBefore(acceptableState, input[input.Length-1].ToString(), -2, workSpace);
+			this.UpdateWorkSpaceIfSpaceAfter(acceptableState, input[input.Length-1].ToString(), -2, workSpace);
 
 			this.PrintIfDebug(workSpace.ToString());
 
