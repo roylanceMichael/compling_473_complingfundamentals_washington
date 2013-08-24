@@ -37,6 +37,8 @@ namespace Ling473_Proj3
 
 		public Fsm(bool debug = true)
 		{
+			Console.OutputEncoding = System.Text.Encoding.UTF8;
+			
 			this.debug = debug;
 			this.Transitions = new Dictionary<int, Func<char, int>>
 			{
