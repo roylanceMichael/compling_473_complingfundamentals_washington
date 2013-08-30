@@ -10,6 +10,8 @@ var log = function(str){
 	}
 }
 
+var doesATrieExistAtThisIndex(mainTrie, )
+
 var processFile = function(fileLocation){
 	// get file stream
 	var fileStream = fs.createReadStream(fileLocation);
