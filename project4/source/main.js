@@ -1,53 +1,81 @@
 var fs = require('fs');
 
+var rootTrie = { };
+var debug = false;
+
 /* CUSTOM FUNCTIONS */
+var log = function(str){
+	if(debug) {
+		console.log(str);
+	}
+}
+
 var processFile = function(fileLocation){
 	// get file stream
 	var fileStream = fs.createReadStream(fileLocation);
 
 	var currentTrieNode = rootTrie;
 
-	console.log(JSON.stringify(rootTrie, null, "\t"));
+	log(JSON.stringify(rootTrie, null, "\t"));
 
+	var offsetsFound = [];
+	var foundSequence = "";
 	var offsetOfCurrentDnaSequence = 0;
 	var totalFileIdx = 0;
 
 	fileStream.on('data', function(buffer){
 		var bufferStr = buffer.toString();
 
-		console.log("looking for " + bufferStr);
+		log("looking for " + bufferStr);
 
 		for(var i = 0; i < bufferStr.length; i++){
 			var currentChar = bufferStr[i];
 
 			if(currentTrieNode[currentChar] != undefined) {
-				console.log("found " + currentChar + ", moving on");
+				
+				log("found " + currentChar + ", moving on");
+				foundSequence = foundSequence + currentChar;
 				currentTrieNode = currentTrieNode[currentChar];
 				totalFileIdx = totalFileIdx + 1;
+			
 			}
 			else {
-				console.log(currentChar + "-- A: " + currentTrieNode["A"] + " - G: " + currentTrieNode["G"] + " - C: " + currentTrieNode["C"] + " - T: " + currentTrieNode["T"]);
+				log(currentChar + "-- A: " + 
+					currentTrieNode["A"] + " - G: " + 
+					currentTrieNode["G"] + " - C: " + 
+					currentTrieNode["C"] + " - T: " + 
+					currentTrieNode["T"]);
 				
 				// report if found a trie
 				if(currentTrieNode["A"] == undefined &&
 					currentTrieNode["G"] == undefined &&
 					currentTrieNode["C"] == undefined &&
 					currentTrieNode["T"] == undefined){
-					console.log("found trie at " + offsetOfCurrentDnaSequence);
+
+					log("found trie at " + offsetOfCurrentDnaSequence);
+					offsetsFound.push({ "offset": offsetOfCurrentDnaSequence, "sequence": foundSequence });
+				
 				}
 				else {
-					console.log("didn't find a match");
+				
+					log("didn't find a match");
+				
 				}
 
 				totalFileIdx = totalFileIdx + 1;
 				offsetOfCurrentDnaSequence = totalFileIdx;
+				foundSequence = "";
 				currentTrieNode = rootTrie;
 			}
 		}
-
-
 	});
 
+	fileStream.on('end', function(){
+		for(var i = 0; i < offsetsFound.length; i++) {
+			console.log("found at " + offsetsFound[i].offset + " : " + offsetsFound[i].sequence);
+		}
+		console.log("found " + offsetsFound.length + " total");
+	});
 };
 
 // create root trie
@@ -101,18 +129,18 @@ var argument = process.argv[2];
 
 if(argument.toLowerCase() === "test"){
 	console.log("processing tests...");
-	
+	debug = true;
+
 	var anotherRootTrie = {};
 	createRootTrie("CCNCT", anotherRootTrie);
 	console.log(JSON.stringify(anotherRootTrie, null, "\t"));
 
 }
 else {
-	var rootTrie = { };
 	var folderLocation = process.argv[2];
-	var sevenTargetsFile = "../content/one-target.txt";
+	var sevenTargetsFile = "../content/seven-targets.txt";
 	var sevenTargets = fs.createReadStream(sevenTargetsFile);
-	var dnaFile = /\.dna/;
+	var dnaFile = /\.dna$/;
 
 	// load up the trie
 	sevenTargets.on('data', function(buffer){
