@@ -7,6 +7,8 @@ var processFile = function(fileLocation){
 
 	var currentTrieNode = rootTrie;
 
+	console.log(JSON.stringify(rootTrie, null, "\t"));
+
 	var offsetOfCurrentDnaSequence = 0;
 	var totalFileIdx = 0;
 
@@ -18,13 +20,14 @@ var processFile = function(fileLocation){
 		for(var i = 0; i < bufferStr.length; i++){
 			var currentChar = bufferStr[i];
 
-			if(currentTrieNode[currentChar] != undefined){
+			if(currentTrieNode[currentChar] != undefined) {
 				console.log("found " + currentChar + ", moving on");
 				currentTrieNode = currentTrieNode[currentChar];
 				totalFileIdx = totalFileIdx + 1;
 			}
 			else {
-
+				console.log(currentChar + "-- A: " + currentTrieNode["A"] + " - G: " + currentTrieNode["G"] + " - C: " + currentTrieNode["C"] + " - T: " + currentTrieNode["T"]);
+				
 				// report if found a trie
 				if(currentTrieNode["A"] == undefined &&
 					currentTrieNode["G"] == undefined &&
@@ -84,6 +87,10 @@ var containsDnaSeq = function(val){
 
 /* END CUSTOM FUNCTIONS */
 
+/* BEGIN TESTS */
+
+/* END TESTS */
+
 /* MAIN FUNCTIONS */
 if(process.argv == undefined || process.argv.length < 3) {
 	console.log("please include either 'test' to run tests or the location of the directory to test");
@@ -103,7 +110,7 @@ if(argument.toLowerCase() === "test"){
 else {
 	var rootTrie = { };
 	var folderLocation = process.argv[2];
-	var sevenTargetsFile = "../content/seven-targets.txt";
+	var sevenTargetsFile = "../content/one-target.txt";
 	var sevenTargets = fs.createReadStream(sevenTargetsFile);
 	var dnaFile = /\.dna/;
 
