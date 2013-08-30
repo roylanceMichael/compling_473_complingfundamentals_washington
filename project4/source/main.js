@@ -1,7 +1,7 @@
 var fs = require('fs');
 
 var rootTrie = { };
-var debug = false;
+var debug = true;
 
 /* CUSTOM FUNCTIONS */
 var log = function(str){
@@ -16,7 +16,7 @@ var processFile = function(fileLocation){
 
 	var currentTrieNode = rootTrie;
 
-	log(JSON.stringify(rootTrie, null, "\t"));
+	// log(JSON.stringify(rootTrie, null, "\t"));
 
 	var offsetsFound = [];
 	var foundSequence = "";
@@ -68,6 +68,18 @@ var processFile = function(fileLocation){
 				currentTrieNode = rootTrie;
 			}
 		}
+
+		// report if found a trie
+		if(currentTrieNode["A"] == undefined &&
+			currentTrieNode["G"] == undefined &&
+			currentTrieNode["C"] == undefined &&
+			currentTrieNode["T"] == undefined){
+
+			log("found trie at " + offsetOfCurrentDnaSequence);
+			offsetsFound.push({ "offset": offsetOfCurrentDnaSequence, "sequence": foundSequence });
+		
+		}
+
 	});
 
 	fileStream.on('end', function(){
@@ -77,6 +89,8 @@ var processFile = function(fileLocation){
 		console.log("found " + offsetsFound.length + " total");
 	});
 };
+
+
 
 // create root trie
 var createRootTrie = function(bufferStr, mainTrie) {
