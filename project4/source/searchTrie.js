@@ -1,7 +1,7 @@
 // given a string and a trie, I want to make sure that 
 // the trie exists within the string
 
-var searchTrie = function(stringToSearch, foundTrieSoFar, currentNode) {
+var searchTrie = function(stringToSearch, foundTrieSoFar, currentNode, offset) {
 	// we know we've reached a terminal node if 
 	// the object has no children
 
@@ -10,7 +10,7 @@ var searchTrie = function(stringToSearch, foundTrieSoFar, currentNode) {
 		
 		// terminal state?
 		if(isTerminalState(currentNode)) {
-			return { "foundTrie": foundTrieSoFar };
+			return { "state":"success", "foundTrie": foundTrieSoFar, "offset": offset };
 		}
 
 		// we do not have a match
@@ -25,10 +25,10 @@ var searchTrie = function(stringToSearch, foundTrieSoFar, currentNode) {
 	}
 
 	if(isTerminalState(currentNode)) {
-		return { "state":"success", "foundTrie": foundTrieSoFar };
+		return { "state":"success", "foundTrie": foundTrieSoFar, "offset": offset };
 	}
 
-	return { "state":"mada", "currentNode": currentNode, "foundTrieSoFar": foundTrieSoFar };
+	return { "state":"mada", "currentNode": currentNode, "foundTrieSoFar": foundTrieSoFar, "offset": offset };
 }
 
 var isTerminalState = function(currentNode) {

@@ -71,7 +71,7 @@ var correctSubsetIdentifiedWhenGivenTrieDoesNotComplete = function() {
 	var newTrie = buildTrie("ACGT", currentNode, mainTrie);
 
 	// act
-	var searchResult = searchTrie("AC", "", newTrie.mainTrie);
+	var searchResult = searchTrie("AC", "", newTrie.mainTrie, 0);
 
 	// assert
 	var result = true;
@@ -87,8 +87,8 @@ var correctSubsetIdentifiedWhenBufferSplit = function() {
 	var newTrie = buildTrie("ACGT", currentNode, mainTrie);
 
 	// act
-	var searchResult = searchTrie("AC", "", newTrie.mainTrie);
-	var anotherSearchResult = searchTrie("GT", searchResult.foundTrieSoFar, searchResult.currentNode);
+	var searchResult = searchTrie("AC", "", newTrie.mainTrie, 0);
+	var anotherSearchResult = searchTrie("GT", searchResult.foundTrieSoFar, searchResult.currentNode, 0);
 
 	// assert
 	var result = true;
@@ -104,8 +104,8 @@ var failReturnedWhenBufferSplitAndDoesNotContainTrie = function() {
 	var newTrie = buildTrie("ACGT", currentNode, mainTrie);
 
 	// act
-	var searchResult = searchTrie("AC", "", newTrie.mainTrie);
-	var anotherSearchResult = searchTrie("GG", searchResult.foundTrieSoFar, searchResult.currentNode);
+	var searchResult = searchTrie("AC", "", newTrie.mainTrie, 0);
+	var anotherSearchResult = searchTrie("GG", searchResult.foundTrieSoFar, searchResult.currentNode, 0);
 
 	// assert
 	var result = true;
