@@ -21,7 +21,7 @@ var currentNode = rootTrie;
 fs.readdir(folderLocation, function(err, files) {
 		for(var i = 0; i < files.length; i++){
 			if(files[i].match(dnaFile)) {
-				filesToProcess.push(folderLocation + "\\" + files[i]);
+				filesToProcess.push(folderLocation + files[i]);
 			}
 		}
 });
