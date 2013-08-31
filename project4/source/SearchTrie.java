@@ -34,7 +34,11 @@ public class SearchTrie {
 			workspace.append("\n");
 		}
 
-		return workspace.toString();
+		return workspace.toString().trim();
+	}
+
+	public String GetFileName() {
+		return this.fileName;
 	}
 
 	public void SearchString(String maximumSizedString) {

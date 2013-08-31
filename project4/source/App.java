@@ -1,11 +1,6 @@
-import java.io.IOException;
-import java.io.FileReader;
-import java.io.File;
+import java.io.*;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.sql.Timestamp;
-import java.util.Date;
+import java.util.regex.*;
 
 public class App {
 	public static void main(String args[]) throws IOException {
@@ -17,33 +12,83 @@ public class App {
 			return;
 		}
 
-		BuildTrie buildTrie = LoadTrieFromFile(args[1]);
+		BuildTrie buildTrie = LoadTrieFromFile(args[0]);
 
 		// location of all the files to search through
-		File folder = new File(args[0]);
+		File folder = new File(args[1]);
 		File[] fileList = folder.listFiles();
 		Pattern dnaPattern = Pattern.compile("dna$");
 
-		Date date = new java.util.Date();
-		System.out.println(new Timestamp(date.getTime()));
+		List<SearchTrie> searchTries = new ArrayList<SearchTrie>();
 
 		for (int i = 0; i < fileList.length; i++) {
 			// find dna files
 			Matcher matcher = dnaPattern.matcher(fileList[i].toString());
 			
 			if(matcher.find()) {
-				// we want to process the trie here...
 				SearchTrie st = CreateSearchTrie(fileList[i].toString(), buildTrie.GetMaximumTrieSize(), buildTrie.GetMainTrie());
 				System.out.println(st.PrintOffsets());
+				searchTries.add(st);
 			}
 		}
-		date = new java.util.Date();
-		System.out.println(new Timestamp(date.getTime()));
+
+		// build up extra credit dictionary
+		HashMap<String, List<String>> sequenceFile = new HashMap<String, List<String>>();
+
+		for(int i = 0; i < searchTries.size(); i++) {
+			SearchTrie st = searchTries.get(i);
+
+			for (Map.Entry<Integer, String> entry : st.ReportOffsets().entrySet()) {
+				String sequence = entry.getValue();
+
+				if(sequenceFile.containsKey(sequence)) {
+					List<String> reports = sequenceFile.get(sequence);
+					reports.add("\t" + Integer.toString(entry.getKey()) + "\t" + st.GetFileName());
+				}
+				else {
+					List<String> reports = new ArrayList<String>();
+					reports.add("\t" + Integer.toString(entry.getKey()) + "\t" + st.GetFileName());
+					sequenceFile.put(sequence, reports);
+				}
+			}
+		}
+
+		// EXTRA CREDIT portion here:
+
+		StringBuilder extraCreditFile = new StringBuilder();
+
+		for (Map.Entry<String, List<String>> entry : sequenceFile.entrySet()) {
+			extraCreditFile.append(entry.getKey());
+			extraCreditFile.append("\n");
+
+			List<String> fileOffsets = entry.getValue();
+			
+			for (int i = 0; i < fileOffsets.size(); i++) {
+				extraCreditFile.append(fileOffsets.get(i));
+				extraCreditFile.append("\n");
+			}
+		}
+
+		BufferedWriter writer = null;
+
+		try {
+			writer = new BufferedWriter(new FileWriter("extra-credit.txt"));
+			writer.write(extraCreditFile.toString().trim());
+		} 
+		finally {
+			if(writer != null) {
+				writer.close();
+			}
+		}
 	}
 
 	private static SearchTrie CreateSearchTrie(String fileName, int maximumTrieSize, Trie mainTrie) throws IOException {
 		// location of the dna file
-		SearchTrie searchTrie = new SearchTrie(maximumTrieSize, mainTrie, fileName);
+		// we want to process the trie here...
+		File file = new File(fileName);
+		
+		SearchTrie searchTrie = new SearchTrie(maximumTrieSize, mainTrie, file.getName());
+
 		FileReader inputStream = null;
 
 		try {
