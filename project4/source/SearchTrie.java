@@ -6,7 +6,7 @@ public class SearchTrie {
 	private HashMap<Integer, String> foundOffsets;
 	private int maximumSize;
 	private int offset;
-	private String temporaryString;
+	private StringBuilder temporaryString;
 	private Trie trie;
 	private String fileName;
 
@@ -14,7 +14,7 @@ public class SearchTrie {
 		this.foundOffsets = new HashMap<Integer, String>();
 		this.maximumSize = maximumSize;
 		this.offset = 0;
-		this.temporaryString = "";
+		this.temporaryString = new StringBuilder();
 		this.trie = trie;
 		this.fileName = fileName;
 	}
@@ -41,16 +41,17 @@ public class SearchTrie {
 		return this.fileName;
 	}
 
-	public void SearchString(String maximumSizedString) {
+	public void SearchString(char value) {
 		// I want to make sure that SubString always searches the maximum amount
-		this.temporaryString = this.temporaryString + maximumSizedString;
+		this.temporaryString.append(value);
 		
 		if(this.temporaryString.length() <= this.maximumSize) {
 			return;
 		}
 		
-		for(int i = 0; i < this.temporaryString.length() - this.maximumSize; i++) {
+		for (int i = 0; i < this.temporaryString.length() - this.maximumSize; i++) {
 			String substringToTest = this.temporaryString.substring(i, this.temporaryString.length() -1);
+			
 			String result = this.SearchGivenSubstring(substringToTest);
 
 			if(result != null) {
@@ -61,11 +62,11 @@ public class SearchTrie {
 		}
 
 		// set the temporary string to be the remainder
-		this.temporaryString = this.temporaryString.substring(this.temporaryString.length() - this.maximumSize);
+		this.temporaryString.delete(0, this.temporaryString.length() - this.maximumSize);
 	}
 
 	public void EndSearch() {
-		for(int i = 0; i < this.temporaryString.length(); i++) {
+		for (int i = 0; i < this.temporaryString.length(); i++) {
 			String substringToTest = this.temporaryString.substring(i, this.temporaryString.length() - 1);
 			String result = this.SearchGivenSubstring(substringToTest);
 
@@ -79,21 +80,20 @@ public class SearchTrie {
 
 	// will return trie found if successful, null otherwise
 	public String SearchGivenSubstring(String substringValue) {
-		Trie closureTrie = trie;
 		for(int i = 0; i < substringValue.length(); i++) {
 
-			String currentChar = Character.toString(substringValue.charAt(i));
+			char currentChar = substringValue.charAt(i);
 
 			// are we a leaf? let's report back
-			if (closureTrie.IsLeaf()) {
+			if (this.trie.IsLeaf()) {
 				this.trie = Trie.ResetTrie(this.trie);
-				return substringValue.substring(0, i);
+				return substringValue.substring(0, i).toUpperCase();
 			}
 
-			Trie foundTrie = closureTrie.GetTrie(currentChar);
+			Trie foundTrie = this.trie.GetTrie(currentChar);
 
 			if (foundTrie != null) {
-				closureTrie = foundTrie;
+				this.trie = foundTrie;
 			}
 			else {
 				this.trie = Trie.ResetTrie(this.trie);
@@ -102,9 +102,9 @@ public class SearchTrie {
 		}
 
 		// are we a leaf? let's report back
-		if (closureTrie.IsLeaf()) {
+		if (this.trie.IsLeaf()) {
 			this.trie = Trie.ResetTrie(this.trie);
-			return substringValue.substring(0, substringValue.length());
+			return substringValue.substring(0, substringValue.length()).toUpperCase();
 		}
 
 		this.trie = Trie.ResetTrie(this.trie);

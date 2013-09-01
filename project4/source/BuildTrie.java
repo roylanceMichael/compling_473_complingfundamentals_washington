@@ -22,7 +22,7 @@ public class BuildTrie {
 	public void BuildDnaTrieFromString(String dnaSequence) {
 		for(int i = 0; i < dnaSequence.length(); i++) {
 
-			String currentChar = Character.toString(dnaSequence.charAt(i)).toUpperCase();
+			char currentChar = dnaSequence.charAt(i);
 			
 			boolean isDna = Trie.IsDna(currentChar);
 			

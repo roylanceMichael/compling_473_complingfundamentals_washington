@@ -26,6 +26,7 @@ public class App {
 			Matcher matcher = dnaPattern.matcher(fileList[i].toString());
 			
 			if(matcher.find()) {
+				File file = new File(fileList[i].toString());
 				SearchTrie st = CreateSearchTrie(fileList[i].toString(), buildTrie.GetMaximumTrieSize(), buildTrie.GetMainTrie());
 				System.out.println(st.PrintOffsets());
 				searchTries.add(st);
@@ -82,27 +83,37 @@ public class App {
 		}
 	}
 
+	static byte[] ReadFile(File file) throws IOException
+    {
+        final int file_size = (int) file.length();
+ 
+        byte[] file_buf = new byte[file_size];
+ 
+        FileInputStream input = new FileInputStream(file);
+ 
+        int input_len = input.read(file_buf);
+ 
+        if (input_len != file_size) {
+            System.err.println("Didn't read all the bytes of the file: "
+                    + file_size + " size vs " + input_len + " read");
+        }
+ 
+        input.close();
+ 
+        return file_buf;
+    }
+
 	private static SearchTrie CreateSearchTrie(String fileName, int maximumTrieSize, Trie mainTrie) throws IOException {
 		// location of the dna file
 		// we want to process the trie here...
 		File file = new File(fileName);
-		
+		byte[] bytes = ReadFile(file);
+
 		SearchTrie searchTrie = new SearchTrie(maximumTrieSize, mainTrie, file.getName());
 
-		FileReader inputStream = null;
-
-		try {
-        		inputStream = new FileReader(fileName);
-        		int c;
-        		while ((c = inputStream.read()) != -1) {
-        			searchTrie.SearchString((Character.toString((char) c)).toUpperCase());
-        		}
-
-		} finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
+		for (int i = 0; i < bytes.length; ++i) {
+			searchTrie.SearchString((char) bytes[i]);
+		}
 
         searchTrie.EndSearch();
 

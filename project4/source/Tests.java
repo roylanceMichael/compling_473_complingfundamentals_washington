@@ -26,7 +26,7 @@ public class Tests {
 
 		boolean result = true;
 		// this will throw an exception if bad
-		result = rootTrie.GetTrie("A").GetTrie("C").GetTrie("G").GetTrie("T") != null;
+		result = rootTrie.GetTrie('A').GetTrie('C').GetTrie('G').GetTrie('T') != null;
 		System.out.println(result + " -> CorrectTrieWhenGivenACGT");
 	}
 
@@ -42,7 +42,7 @@ public class Tests {
 
 		boolean result = true;
 		// this will throw an exception if bad
-		result = rootTrie.GetTrie("A").GetTrie("C").IsLeaf() && rootTrie.GetTrie("G").GetTrie("T").IsLeaf();
+		result = rootTrie.GetTrie('A').GetTrie('C').IsLeaf() && rootTrie.GetTrie('G').GetTrie('T').IsLeaf();
 		System.out.println(result + " -> CorrectTrieWhenGivenACNGT");
 	}
 
@@ -59,7 +59,7 @@ public class Tests {
 
 		boolean result = true;
 		// this will throw an exception if bad
-		result = rootTrie.GetTrie("A").GetTrie("C").IsLeaf() && rootTrie.GetTrie("G").GetTrie("T").IsLeaf();
+		result = rootTrie.GetTrie('A').GetTrie('C').IsLeaf() && rootTrie.GetTrie('G').GetTrie('T').IsLeaf();
 		System.out.println(result + " -> CorrectTrieWhenGivenTwoBuffers");
 	}
 
@@ -76,7 +76,7 @@ public class Tests {
 
 		boolean result = true;
 		// this will throw an exception if bad
-		result = rootTrie.GetTrie("A").GetTrie("C").IsLeaf() && rootTrie.GetTrie("G").GetTrie("T").IsLeaf();
+		result = rootTrie.GetTrie('A').GetTrie('C').IsLeaf() && rootTrie.GetTrie('G').GetTrie('T').IsLeaf();
 		System.out.println(result + " -> CorrectTrieWhenGivenTwoBuffers2");
 	}
 
@@ -125,7 +125,10 @@ public class Tests {
 		SearchTrie st = new SearchTrie(bt.GetMaximumTrieSize(), rootTrie, "test");
 
 		// act
-		st.SearchString("TACGTTTT");
+		String compareSeq = "TACGTTTT";
+		for (int i = 0; i < compareSeq.length(); i++) {
+			st.SearchString(compareSeq.charAt(i));
+		}
 		st.EndSearch();
 
 		// assert
@@ -147,8 +150,7 @@ public class Tests {
 		// act
 		String testString = "TACGTTTT";
 		for (int i = 0; i < testString.length(); i++) {
-			String currentChar = Character.toString(testString.charAt(i));
-			st.SearchString(currentChar);
+			st.SearchString(testString.charAt(i));
 		}
 		st.EndSearch();
 
@@ -172,8 +174,7 @@ public class Tests {
 		// act
 		String testString = "TTTGTACGTTTT";
 		for (int i = 0; i < testString.length(); i++) {
-			String currentChar = Character.toString(testString.charAt(i));
-			st.SearchString(currentChar);
+			st.SearchString(testString.charAt(i));
 		}
 		st.EndSearch();
 
@@ -197,8 +198,7 @@ public class Tests {
 		// act
 		String testString = "TTNGTACGTRTT";
 		for (int i = 0; i < testString.length(); i++) {
-			String currentChar = Character.toString(testString.charAt(i));
-			st.SearchString(currentChar);
+			st.SearchString(testString.charAt(i));
 		}
 		st.EndSearch();
 

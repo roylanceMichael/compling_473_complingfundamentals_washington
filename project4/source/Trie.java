@@ -10,39 +10,36 @@ public class Trie {
 		this.root = root;
 	}
 
-	public void SetTrie(String value) {
-		String normalized = value.toUpperCase();
-
+	public void SetTrie(char value) {
 		Trie newTrie = new Trie(false);
 		newTrie.SetParent(this);
 
-		if (normalized.equals("A")) {
+		if (value == 'A' || value == 'a') {
 			this.a = newTrie;
 		}
-		else if (normalized.equals("G")) {
+		else if (value == 'G' || value == 'g') {
 			this.g = newTrie;
 		}
-		else if (normalized.equals("C")) {
+		else if (value == 'C' || value == 'c') {
 			this.c = newTrie;
 		}
-		else if (normalized.equals("T")) {
+		else if (value == 'T' || value == 't') {
 			this.t = newTrie;
 		}
 	}
 
-	public Trie GetTrie(String value) {
-		String normalized = value.toUpperCase();
+	public Trie GetTrie(char value) {
 
-		if (normalized.equals("A")) {
+		if (value == 'A') {
 			return this.a;
 		}
-		else if (normalized.equals("G")) {
+		else if (value == 'G') {
 			return this.g;
 		}
-		else if (normalized.equals("C")) {
+		else if (value == 'C') {
 			return this.c;
 		}
-		else if (normalized.equals("T")) {
+		else if (value == 'T') {
 			return this.t;
 		}
 
@@ -67,13 +64,12 @@ public class Trie {
 				this.t == null;
 	}
 
-	public static boolean IsDna(String value) {
-		String normalized = value.toUpperCase();
+	public static boolean IsDna(char value) {
 
-		return normalized.equals("A") ||
-				normalized.equals("C") ||
-				normalized.equals("G") ||
-				normalized.equals("T");
+		return value == 'A' || value == 'a' || 
+				value == 'C' || value == 'c' || 
+				value == 'G' || value == 'g' ||
+				value == 'T' || value == 't';
 	}
 
 	public static Trie ResetTrie(Trie trie) {
