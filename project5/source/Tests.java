@@ -7,7 +7,7 @@ public class Tests {
 		this.ReturnsProperUnigramJapanese();
 	}
 
-	private static BayesianReporter SetupReporter() {
+	private static BayesianReporter SetupReporter(Boolean minThreshold) {
 		HashMap<String, HashMap<String, Integer>> masterList = new HashMap<String, HashMap<String, Integer>>();
 		HashMap<String, Integer> englishWords = new HashMap<String, Integer>();
 		englishWords.put("I", 1);
@@ -25,7 +25,7 @@ public class Tests {
 		japaneseWords.put("da", 3);
 		japaneseWords.put("yo", 3);
 		masterList.put("Japanese", japaneseWords);
-		BayesianReporter reporter = new BayesianReporter(masterList);
+		BayesianReporter reporter = new BayesianReporter(masterList, minThreshold);
 		return reporter;
 	}
 
@@ -37,7 +37,7 @@ public class Tests {
 
 	public void ReturnsProperUnigramEnglish() {
 		// arrange
-		BayesianReporter reporter = SetupReporter();
+		BayesianReporter reporter = SetupReporter(false);
 
 		// act
 		String report = reporter.ConsumeAndReportSentence("1\tI yo");
@@ -48,12 +48,45 @@ public class Tests {
 
 	public void ReturnsProperUnigramJapanese() {
 		// arrange
-		BayesianReporter reporter = SetupReporter();
+		BayesianReporter reporter = SetupReporter(false);
 
 		// act
 		String report = reporter.ConsumeAndReportSentence("1\tboku yo");
 
 		// assert
 		this.ReportIfNotTrue(report.contains("result\tJapanese"), "Result was not Japanese for boku\tyo");
+	}
+
+	public void ReturnsProperUnigramEnglishWithThreshold() {
+		// arrange
+		BayesianReporter reporter = SetupReporter(true);
+
+		// act
+		String report = reporter.ConsumeAndReportSentence("1\tI yo");
+
+		// assert
+		this.ReportIfNotTrue(report.contains("result\tEnglish"), "Result was not English for I\tyo");
+	}
+
+	public void ReturnsProperUnigramJapaneseWithThreshold() {
+		// arrange
+		BayesianReporter reporter = SetupReporter(true);
+
+		// act
+		String report = reporter.ConsumeAndReportSentence("1\tboku yo");
+
+		// assert
+		this.ReportIfNotTrue(report.contains("result\tJapanese"), "Result was not Japanese for boku\tyo");
+	}
+
+	public void ReturnsUnknownWhenWordsContainNoWordsInEitherDictionary() {
+		// arrange
+		BayesianReporter reporter = SetupReporter(true);
+
+		// act
+		String report = reporter.ConsumeAndReportSentence("1\twassup something");
+
+		// assert
+		this.ReportIfNotTrue(report.contains("result\tUnknown"), "Result was not Unknown for wassup something");
 	}
 }

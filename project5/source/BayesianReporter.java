@@ -5,10 +5,12 @@ public class BayesianReporter {
 	private HashMap<String, HashMap<String, Integer>> masterLanguageList;
 	private HashMap<String, Integer> totalLanguageWordCount;
 	private HashSet<Character> delimiterChars;
+	private Boolean determineIfUnknown;
 	
-	public BayesianReporter(HashMap<String, HashMap<String, Integer>> masterLanguageList) {
+	public BayesianReporter(HashMap<String, HashMap<String, Integer>> masterLanguageList, Boolean determineIfUnknown) {
 		this.masterLanguageList = masterLanguageList;
 		this.totalLanguageWordCount = new HashMap<String, Integer>();
+		this.determineIfUnknown = determineIfUnknown;
 
 		// update the total list per type
 		for (Map.Entry<String, HashMap<String, Integer>> entry : this.masterLanguageList.entrySet()) {
@@ -71,6 +73,16 @@ public class BayesianReporter {
 		return probabilityThisLanguage;
 	}
 
+	private double CalculateMaximumUnknownThreshold(String languageKey, String[] words) {
+		HashMap<String, Integer> languageProbability = this.masterLanguageList.get(languageKey);
+
+		// get the total number of words including smoothing
+		int totalCount = this.totalLanguageWordCount.get(languageKey);
+
+		// every word is unknown...
+		return Math.log((double)1 / (double)totalCount) * (words.length - 3);
+	}
+
 	public String ConsumeAndReportSentence(String sentence) {
 		// we always get a number, then a tab, then the sentence
 		// we always look for the tab first
@@ -87,7 +99,7 @@ public class BayesianReporter {
 			workSpace.append("\n");
 
 			double lowestProbability = (double) -100000;
-			String winningLanguage = "";
+			String winningLanguage = "Unknown";
 
 			// this is where I need to check, per language, the probability of each pass
 			for (Map.Entry<String, HashMap<String, Integer>> entry : this.masterLanguageList.entrySet()) {
@@ -99,8 +111,12 @@ public class BayesianReporter {
 				workSpace.append("\n");
 
 				if(probabilityThisLanguage > lowestProbability) {
-					lowestProbability = probabilityThisLanguage;
-					winningLanguage = currentLang;
+					if((this.determineIfUnknown && 
+					   probabilityThisLanguage > CalculateMaximumUnknownThreshold(currentLang, words)) || 
+						!this.determineIfUnknown) {
+						lowestProbability = probabilityThisLanguage;
+						winningLanguage = currentLang;
+					}
 				}
 			}
 

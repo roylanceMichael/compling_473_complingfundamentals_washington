@@ -49,7 +49,7 @@ public class App {
 		}
 
 		// at this point I should have all my languages loaded into this HashMap structure
-		BayesianReporter reporter = new BayesianReporter(masterLanguageList);
+		BayesianReporter reporter = new BayesianReporter(masterLanguageList, false);
 
 		// normal assignment 
 		File file = new File(args[1]);
@@ -62,6 +62,31 @@ public class App {
 		}
 
 		// extra credit
+		reporter = new BayesianReporter(masterLanguageList, true);
+		StringBuilder extraCreditFile = new StringBuilder();
+
+		// normal assignment 
+		file = new File(args[2]);
+		fileString = ReadFileToString(file);
+		// split by newline
+		lines = fileString.split("\n");
+		for(int j = 0; j < lines.length; j++) {
+			String reportSentence = reporter.ConsumeAndReportSentence(lines[j]);
+			extraCreditFile.append(reportSentence);
+			extraCreditFile.append("\n");
+		}
+
+		BufferedWriter writer = null;
+
+		try {
+			writer = new BufferedWriter(new FileWriter("extra-credit.txt"));
+			writer.write(extraCreditFile.toString().trim());
+		} 
+		finally {
+			if(writer != null) {
+				writer.close();
+			}
+		}
 	}
 
 	private static String CleanseFileName(String fileName) {
