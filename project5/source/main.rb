@@ -1,5 +1,5 @@
 lmExpr = /lm$/
-punctuationStripper = /.,!¡¥$£?¿;:()"'—–-\/\[\]¹²³«»/
+#punctuationStripper = /.,!¡¥$£?¿;:()"'—–-\/\[\]¹²³«»/
 
 class LanguageTuple
 	attr_accessor :word, :count

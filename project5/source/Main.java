@@ -5,6 +5,7 @@ import java.nio.charset.Charset;
 
 public class Main {
 	private static final Charset UTF8_CHARSET = Charset.forName("UTF-8");
+	private static final String StripCharacters = ".,!¡¥$£?¿;:()\"'—–-/[]¹²³«»";
 
 	private static String DecodeUTF8(byte[] bytes) {
 	    return new String(bytes, UTF8_CHARSET);
