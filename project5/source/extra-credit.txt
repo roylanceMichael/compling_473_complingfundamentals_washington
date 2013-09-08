@@ -513,7 +513,7 @@ illustrado	3
 sapagkat	3
 Kilusang	3
 Propaganda	3
-Jos?	3
+Jos�	3
 Katipunan	3
 rebolusyonaryong	3
 Hong	3
@@ -672,7 +672,7 @@ pagbisita	2
 timog-silangan	2
 permanenteng	2
 kasabay	2
-L?pez	2
+L�pez	2
 marami	2
 kolonyalisasyon	2
 naganap	2
@@ -717,7 +717,7 @@ yunit	2
 alipin	2
 Dinala	2
 Nang	2
-Espa?ol	2
+Espa�ol	2
 binigyan	2
 nilang	2
 kasunduan	2
@@ -772,7 +772,7 @@ kaganapan	2
 kaisipan	2
 Noli	2
 matamo	2
-Andr?s	2
+Andr�s	2
 watawat	2
 30	2
 kamag-anak	2
@@ -852,7 +852,7 @@ pagkawasak	2
 pinasok	2
 Nagpatuloy	2
 sina	2
-Osme?a	2
+Osme�a	2
 doon	2
 sinimulan	2
 planong	2
@@ -967,14 +967,14 @@ Lawak	2
 Populasyon	2
 Kabuuan	2
 Densidad	2
-14?35	2
+14�35	2
 N	2
 E	2
 Manila	2
 kultural	2
 mismong	2
 daigdig	2
-121?0	2
+121�0	2
 Pagsimula	2
 sakupin	2
 Pagkatapos	2
@@ -1498,4 +1498,5 @@ mabangis	1
 Ikinukumpara	1
 paghagis	1
 bangin.Nagsimula	1
-?ber	43613
+�ber	43613
+adem�s	4911

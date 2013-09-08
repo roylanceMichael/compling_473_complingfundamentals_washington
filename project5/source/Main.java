@@ -29,7 +29,8 @@ public class Main {
 				BufferedWriter writer = null;
 
 				try {
-					writer = new BufferedWriter(new FileWriter("extra-credit.txt"));
+					writer = new BufferedWriter(new OutputStreamWriter(
+   								 new FileOutputStream("extra-credit.txt"), "UTF-8"));
 					writer.write(fileBytes);
 				} 
 				finally {
