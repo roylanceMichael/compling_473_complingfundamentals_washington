@@ -23,30 +23,42 @@ public class Main {
 			
 			if(matcher.find()) {
 				File file = new File(fileList[i].toString());
-				byte[] fileBytes = ReadFile(file);
-				System.out.println(DecodeUTF8(fileBytes));
+				String fileBytes = ReadFile(file);
+				//	System.out.println(fileBytes);
+
+				BufferedWriter writer = null;
+
+				try {
+					writer = new BufferedWriter(new FileWriter("extra-credit.txt"));
+					writer.write(fileBytes);
+				} 
+				finally {
+					if(writer != null) {
+						writer.close();
+					}
+				}
 			}
 		}
 	}
 
 
-	private static byte[] ReadFile(File file) throws IOException
+	private static String ReadFile(File file) throws IOException
     {
-        final int file_size = (int) file.length();
- 
-        byte[] file_buf = new byte[file_size];
- 
-        FileInputStream input = new FileInputStream(file);
- 
-        int input_len = input.read(file_buf);
- 
-        if (input_len != file_size) {
-            System.err.println("Didn't read all the bytes of the file: "
-                    + file_size + " size vs " + input_len + " read");
-        }
- 
-        input.close();
- 
-        return file_buf;
+    	StringBuffer buffer = new StringBuffer();
+	    try {
+	        FileInputStream fis = new FileInputStream(file.getPath());
+	        InputStreamReader isr = new InputStreamReader(fis, "UTF8");
+	        Reader in = new BufferedReader(isr);
+	        int ch;
+	        while ((ch = in.read()) > -1) {
+	            buffer.append((char)ch);
+	        }
+	        in.close();
+	        return buffer.toString();
+	    } 
+	    catch (IOException e) {
+	        e.printStackTrace();
+	        return null;
+	    }
     }
 }
