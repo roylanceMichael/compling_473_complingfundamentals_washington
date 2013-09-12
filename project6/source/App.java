@@ -4,6 +4,7 @@ public class App {
 			Tests tests = new Tests();
 			tests.TestStringDistance();
 			tests.NormalizedTestStringDistance();
+			tests.TestLineDistance();
 		}
 	}
 }
