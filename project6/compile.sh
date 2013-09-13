@@ -1,0 +1,2 @@
+#!/bin/sh
+javac ./source/App.java ./source/ICostFunction.java ./source/CharCostFunction.java ./source/StringsCostFunction.java ./source/Tuple.java ./source/Tests.java ./source/FileToStringService.java ./source/DistFunctions.java

@@ -26,6 +26,22 @@ public class Tests {
 		NormalizedStringDistanceTest("abcde", "bd", (float)3.0 / 7);
 		NormalizedStringDistanceTest("what", "wha", (1/(float)7));
 		NormalizedStringDistanceTest("chat", "what", 2/(float)8);
+
+		// wiki article
+		NormalizedStringDistanceTest("Lady GaGa", "Lady GaGa", 0);
+
+			
+		NormalizedStringDistanceTest("Joanne Stefani Germanotta (born March 20, 1986),", 
+						 "Stefani Joanne Angelina Germanotta (born March", (float)0.32);
+
+		NormalizedStringDistanceTest("best known by her stage name Lady GaGa,", 
+						 "28, 1986), known by her stage name Lady Gaga,", (float)0.19);
+
+		NormalizedStringDistanceTest("", 
+						 "an imprint of Interscope Records. During", (float)1.00);
+				
+		NormalizedStringDistanceTest("is an Italian-American singer-songwriter and",
+						 "is an American recording artist. She began", (float).4);
 	}
 
 	public void TestLineDistance() {
@@ -35,28 +51,18 @@ public class Tests {
 		this.TestTextNormalizedDistance2();
 
 		this.TestTextNormalizedDistance3();
-		
-		// wiki article
-		LineDistanceTest("Lady GaGa".split("\\s"), "Lady GaGa".split("\\s"), 0);
 
-		/* THESE TESTS AREN'T PASSING	
-		LineDistanceTest("Joanne Stefani Germanotta (born March 20, 1986),".split("\\s"), 
-						 "Stefani Joanne Angelina Germanotta (born March".split("\\s"), (float)0.32);
+		this.TestAlignmentSmallDifference();
 
-		LineDistanceTest("best known by her stage name Lady GaGa,".split("\\s"), 
-						 "28, 1986), known by her stage name Lady Gaga,".split("\\s"), (float)0.19);
+		this.TestAlignmentSame();
 
-		LineDistanceTest("".split("\\s"), 
-						 "an imprint of Interscope Records. During".split("\\s"), (float)1.00);
-				
-		LineDistanceTest("is an Italian-American singer-songwriter and".split("\\s"),
-						 "is an American recording artist. She began".split("\\s"), (float).4);
-		*/
+		this.LadyGaGaTest();
 	}
 
 	public void TestTextNormalizedDistance2() {
         String[] s = new String[] { "", "ab", "xyz" };
         String[] t = new String[] { "", "bc", "xyz" };
+
         LineDistanceTest(s, t, ((float)0.5 + ((float)2.0 / 4)) / 6);
     }
 
@@ -67,16 +73,68 @@ public class Tests {
         LineDistanceTest(s, t, (((float)0.5 + ((float)1.0/3)) + ((float)0.5 + ((float)2.0/4))) / 6);
     }
 
-    public void TestAlignment() {
+    public void TestAlignmentSmallDifference() {
     	String[] s = new String[] { "a", "", "b" };
     	String[] t = new String[] { "", "a", "b" };
 
-
+    	LineDistanceTest(s, t, (float)2.0 / (float)6.0);
     }
 
-    // TEST HELPER FUNCTIONS
+    public void TestAlignmentSame() {
+    	String[] s = new String[] { "a", "b", "c" };
+    	String[] t = new String[] { "a", "b", "c" };
+
+    	LineDistanceTest(s, t, 0);
+    }
+
+    public void LadyGaGaTest() {
+    	String[] s = new String[] { 
+    		"Lady GaGa", 
+    		"Joanne Stefani Germanotta (born March 20, 1986),", 
+    		"best known by her stage name Lady GaGa," };
+    	
+    	String[] t = new String[] { 
+    		"Lady GaGa", 
+    		"Stefani Joanne Angelina Germanotta (born March", 
+    		"28, 1986), known by her stage name Lady Gaga," };
+
+    	ICostFunction stringsCostFunction = new StringsCostFunction(s, t);
+
+        float[][] d = DistFunctions.EditDistance(s.length, t.length, stringsCostFunction);
+
+        //PrintOutDistanceArray(d, s, t);
+
+        String response = DistFunctions.PrintOutAlignment(s, t);
+
+        String answer = "<Lady GaGa> 0.0 <Lady GaGa>\n<Joanne Stefani Germanotta (born March 20, 1986),> 0.32 <Stefani Joanne Angelina Germanotta (born March>\n<best known by her stage name Lady GaGa,> 0.19 <28, 1986), known by her stage name Lady Gaga,>";
+
+        if(!response.equals(answer)) {
+			System.out.println("received: " + response + " was expecting " + answer);
+		}
+    }
+
+    public void LadyGaGaTest1() {
+    	String[] s = new String[] { "x", "ab", "xyz" };
+    	
+    	String[] t = new String[] { "ab", "bc", "xyz" };
+
+    	ICostFunction stringsCostFunction = new StringsCostFunction(s, t);
+
+        float[][] d = DistFunctions.EditDistance(s.length, t.length, stringsCostFunction);
+
+        //PrintOutDistanceArray(d, s, t);
+
+        String response = DistFunctions.PrintOutAlignment(s, t);
+
+        String answer = "<x> 1.0 <>\n<ab> 0.0 <ab>\n<> 1.0 <bc>\n<xyz> 0.0 <xyz>";
+		if(!response.equals(answer)) {
+			System.out.println("received: " + response + " was expecting " + answer);
+		}
+    }
+
+	// TEST HELPER FUNCTIONS
 	private void StringDistanceTest(String s1, String s2, float e) {
-		CharCostFunction charCostFunction = new CharCostFunction(s1, s2);
+		ICostFunction charCostFunction = new CharCostFunction(s1, s2);
 		float result = DistFunctions.EditDistanceResult(s1.length(), s2.length(), charCostFunction);
 		if(result != e) {
 			ReportToConsole(s1 + " <> " + s2 + " got: " + Float.toString(result) + " expected: " + e);
@@ -84,7 +142,7 @@ public class Tests {
 	}
 
 	private void NormalizedStringDistanceTest(String s1, String s2, float e) {
-		CharCostFunction charCostFunction = new CharCostFunction(s1, s2);
+		ICostFunction charCostFunction = new CharCostFunction(s1, s2);
 		float result = DistFunctions.NormalizedEditDistance(s1.length(), s2.length(), charCostFunction);
 		if(result != e) {
 			ReportToConsole(s1 + " <> " + s2 + " got: " + Float.toString(result) + " expected: " + e);
@@ -92,7 +150,7 @@ public class Tests {
 	}
 
 	private void LineDistanceTest(String[] s1, String[] s2, float e) {
-		StringsCostFunction stringsCostFunction = new StringsCostFunction(s1, s2);
+		ICostFunction stringsCostFunction = new StringsCostFunction(s1, s2);
 		float result = DistFunctions.NormalizedEditDistance(s1.length, s2.length, stringsCostFunction);
 
 		if(result != e) {
@@ -111,5 +169,22 @@ public class Tests {
 			workSpace.append(" ");
 		}
 		return workSpace.toString().trim();
+	}
+
+	private static void PrintOutDistanceArray(float[][] d, String[] words1, String[] words2) {
+		int sizeWords1 = d.length;
+		int sizeWords2 = d[0].length;
+
+		System.out.println("Matrix for (i)" + JoinStringWithSpace(words1) + " <-> (j)" + JoinStringWithSpace(words2));
+
+		StringBuilder workSpace = new StringBuilder();
+		for(int i = 0; i < sizeWords1; i++) {
+			for(int j = 0; j < sizeWords2; j++) {
+				workSpace.append(Float.toString(d[i][j]) + " ");
+			}
+			workSpace.append("\n");
+		}
+
+		System.out.println(workSpace.toString());
 	}
 }

@@ -1,0 +1,106 @@
+<BP> 0.0 <BP>
+<From Wikipedia, the free encyclopedia> 0.33 <From Wikipedia, the free encyclopedia  (Redirected from British Petroleum)>
+<> 0.0 <>
+<Revision as of 12:35, 19 April 2010 by EditorInTheRye (talk | contribs)> 1.0 <>
+<(diff) Previous revision | Current revision (diff) | Newer revision (diff)> 0.63 <This is the latest accepted revision, accepted on 28 August 2010.>
+<Jump to: navigation, search> 0.0 <Jump to: navigation, search>
+<This article is about the energy corporation. For other uses, see BP (disambiguation).> 0.0 <This article is about the energy corporation. For other uses, see BP (disambiguation).>
+<> 1.0 <For information on the oil spill from the Deepwater Horizon rig, see Deepwater Horizon oil spill.>
+<BP plc> 0.0 <BP plc>
+<Type Public> 0.27 <Type Public limited>
+<(LSE: BP)> 0.0 <(LSE: BP)>
+<(NYSE: BP)> 0.0 <(NYSE: BP)>
+<Industry Oil and Natural Gas, Alternative fuels> 0.06 <Industry Oil and natural gas, alternative fuels>
+<Founded 1909 (as the Anglo-Persian Oil Company)> 0.0 <Founded 1909 (as the Anglo-Persian Oil Company)>
+<1954 (as the British Petroleum Company)> 0.0 <1954 (as the British Petroleum Company)>
+<2000 (merger of BP, Amoco, and ARCO)> 0.45 <1998 (merger of British Petroleum and Amoco)>
+<Headquarters City of Westminster, London, United Kingdom> 0.0 <Headquarters City of Westminster, London, United Kingdom>
+<Area served Worldwide> 0.0 <Area served Worldwide>
+<Key people Carl-Henric Svanberg (Chairman)> 0.0 <Key people Carl-Henric Svanberg (Chairman)>
+<Tony Hayward (CEO)> 0.0 <Tony Hayward (CEO)>
+<> 1.0 <Bob Dudley (Director, CEO (appointed))>
+<Byron Grote (CFO)> 0.08 <Byron Grote (CFO)[1]>
+<Products BP petroleum and derived products> 0.0 <Products BP petroleum and derived products>
+<BP service stations> 0.0 <BP service stations>
+<Air BP Aviation Fuels> 0.0 <Air BP Aviation Fuels>
+<Castrol motor oil> 0.0 <Castrol motor oil>
+<ARCO gas stations> 0.0 <ARCO gas stations>
+<am/pm convenience stores> 0.0 <am/pm convenience stores>
+<Aral service stations solar pannels> 0.01 <Aral service stations solar panels>
+<Revenue US $246.1 billion (2009)[1]> 0.03 <Revenue US $246.1 billion (2009)[2]>
+<Operating income US $26.43 billion (2009)[1]> 0.02 <Operating income US $26.43 billion (2009)[2]>
+<Net income US $16.58 billion (2009)[1]> 0.03 <Net income US $16.58 billion (2009)[2]>
+<Total assets US $236.0 billion (2009)> 0.0 <Total assets US $236.0 billion (2009)>
+<Total equity US $101.6 billion (2009)> 0.0 <Total equity US $101.6 billion (2009)>
+<Employees 92,000 (March 2009)> 0.25 <Employees 80,300 (Dec 2009)[3]>
+<Website BP.com> 0.0 <Website BP.com>
+<> 0.0 <>
+<1922 BP advert> 0.26 <A 1922 BP advertisement.>
+<BP plc (formerly The British Petroleum Company, plc then BP Amoco plc) is a> 0.63 <BP p.l.c.[4][5] is a global oil and gas company headquartered in London, United Kingdom. It is>
+<British global energy company that is also the third largest global energy and the> 0.45 <the third largest energy company and the fourth largest company in the world.[6] It is one of>
+<4th largest company in the world. As a multinational oil company ("oil major")> 0.6 <the six "supermajors" (vertically integrated private sector oil exploration, natural gas, and>
+<BP is the UK's largest corporation, with its headquarters in St James's, City of> 0.7 <petroleum product marketing companies).[7]>
+<Westminster, London.[2][3][4] The company is among the largest private sector> 1.0 <>
+<energy corporations in the world, and one of the six "supermajors" (vertically> 0.56 <The name "BP" derives from the initials of one of the company's former legal names, British>
+<integrated private sector oil exploration, natural gas, and petroleum product> 0.63 <Petroleum.[8][9] It has operations in over 80 countries and its largest division is BP America,>
+<marketing companies).[5] The company is listed on the London Stock Exchange> 0.63 <which is the biggest producer of oil and natural gas in the United States and is headquartered>
+<and is a constituent of the FTSE 100 Index.> 0.7 <in Houston, Texas.[10][11][12]>
+<> 0.0 <>
+<> 1.0 <BP is listed on the London Stock Exchange and is a constituent of the FTSE 100 Index. It has>
+<> 1.0 <a secondary listing on the New York Stock Exchange.>
+<> 0.0 <>
+<> 1.0 <An April 2010 explosion of BP's Deepwater Horizon drilling rig, in which 11 people died, led to>
+<> 1.0 <an oil spill that contaminated a large area of United States marine environment along the Gulf>
+<> 1.0 <of Mexico. Consequences of the spill included an over 50% drop in BP's stock price,[13]>
+<> 1.0 <damage to the environment, and a decrease in fishing and tourism[14][15][16][17][18]>
+<> 1.0 <projected to impact the region for several years.[19]>
+<> 0.0 <>
+<Contents [hide]> 0.0 <Contents [hide]>
+<1 History> 0.0 <1 History>
+<1.1 Activity in 1909-1979> 0.0 <1.1 Activity in 1909-1979>
+<1.2 1980s and 1990s> 0.0 <1.2 1980s and 1990s>
+<1.3 Recent years> 0.44 <1.3 21st century>
+<> 1.0 <2 Corporate Structure>
+<2 Governance> 0.08 <2.1 Governance>
+<3 Financial data> 0.12 <2.2 Financial data>
+<> 1.0 <3 Environmental record>
+<> 1.0 <3.1 Climate change>
+<4 Controversy> 0.85 <3.2 1993-1995: Hazardous substance dumping>
+<4.1 August 2006 Prudhoe Bay Shutdown> 0.42 <3.3 2006-2007: Prudhoe Bay>
+<> 1.0 <3.4 2010: Texas City chemical leak>
+<> 1.0 <3.5 2010: Deepwater Horizon oil spill>
+<> 1.0 <3.6 Stock decline and takeover speculations>
+<4.2 October 2007 Prudhoe Bay spill> 0.73 <3.7 Mist mountain project>
+<4.3 Canadian oil sands> 0.09 <3.8 Canadian oil sands>
+<> 1.0 <4 Safety record>
+<4.4 Texas City Refinery disaster> 0.49 <4.1 1965: Sea Gem offshore oil rig disaster>
+<> 1.0 <4.2 2005: Texas City Refinery explosion>
+<> 1.0 <4.3 2006-2008: Texas City refinery fatalities>
+<> 1.0 <4.4 2007-2010 Refinery safety violations>
+<> 1.0 <4.5 2009: North Sea helicopter accident>
+<> 1.0 <4.6 2010: Deepwater Horizon well explosion>
+<> 1.0 <5 Political record>
+<> 1.0 <5.1 2007: Propane price manipulation>
+<> 1.0 <5.2 2008: Oil price manipulation>
+<4.5 Baku-Tbilisi-Ceyhan pipeline> 0.06 <5.3 Baku-Tbilisi-Ceyhan pipeline>
+<4.6 Colombian pipeline> 0.09 <5.4 Colombian pipeline>
+<4.7 Mist mountain project> 0.66 <5.5 Contributions to political campaigns>
+<5 Environmental record> 0.74 <5.6 BP and Russia>
+<6 Contributions to political campaigns> 0.6 <6 BP corporate and retail brands>
+<7 BP retail brands> 0.55 <6.1 Corporate branding>
+<7.1 BP> 0.33 <6.2 BP>
+<7.2 ampm> 0.25 <6.3 ampm>
+<> 1.0 <6.4 Aral>
+<7.3 ARCO> 0.25 <6.5 ARCO>
+<7.4 BP Travel Centre> 0.1 <6.6 BP Travel Centre>
+<7.5 BP Connect> 0.14 <6.7 BP Connect>
+<7.6 BP Express> 0.14 <6.8 BP Express>
+<7.7 BP Shop> 0.18 <6.9 BP Shop>
+<7.8 BP 2go> 0.24 <6.10 BP 2go>
+<7.9 Castrol> 0.22 <6.11 Castrol>
+<7.10 Air BP and BP Shipping> 0.07 <6.12 Air BP and BP Shipping>
+<8 Advertisement> 1.0 <>
+<9 Bibliography> 0.75 <7 See also>
+<10 See also> 0.65 <8 References>
+<11 Notes> 0.76 <9 Further reading>
+<12 External links> 0.06 <10 External links>

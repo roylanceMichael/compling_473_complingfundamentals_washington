@@ -5,6 +5,16 @@ public class App {
 			tests.TestStringDistance();
 			tests.NormalizedTestStringDistance();
 			tests.TestLineDistance();
+			tests.LadyGaGaTest1();
+			tests.LadyGaGaTest();
+			return;
 		}
+
+		String[] firstFile = FileToStringService.ConvertFileToString(args[0]).split("\\r?\\n");
+		String[] secondFile = FileToStringService.ConvertFileToString(args[1]).split("\\r?\\n");
+
+		String result = DistFunctions.PrintOutAlignment(firstFile, secondFile);
+		// print out
+		System.out.println(result);
 	}
 }
